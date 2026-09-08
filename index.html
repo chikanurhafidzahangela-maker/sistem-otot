@@ -1,1867 +1,556 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Sistem Otot | Anatomi & Fisiologi</title>
-
-<style>
-
-/* =========================
-   DASAR
-========================= */
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f7f2ee;
-  color:#302427;
-}
-
-button{
-  font-family:inherit;
-  cursor:pointer;
-}
-
-.hidden{
-  display:none !important;
-}
-
-
-/* =========================
-   HOME
-========================= */
-
-.home{
-  min-height:100vh;
-  background:#27191b;
-  color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:40px 20px;
-  position:relative;
-  overflow:hidden;
-}
-
-.home::before{
-  content:"";
-  position:absolute;
-  width:600px;
-  height:600px;
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:50%;
-  right:-250px;
-  top:-250px;
-}
-
-.home::after{
-  content:"";
-  position:absolute;
-  width:400px;
-  height:400px;
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:50%;
-  left:-180px;
-  bottom:-180px;
-}
-
-.home-content{
-  width:100%;
-  max-width:1000px;
-  position:relative;
-  z-index:2;
-  animation:masuk 1s ease;
-}
-
-@keyframes masuk{
-  from{
-    opacity:0;
-    transform:translateY(25px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-.kelompok{
-  font-size:12px;
-  letter-spacing:4px;
-  color:#d9bfc1;
-  margin-bottom:20px;
-}
-
-.anggota{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:8px 18px;
-  color:#c7b5b7;
-  font-size:13px;
-  margin-bottom:35px;
-}
-
-.cover{
-  width:190px;
-  height:190px;
-  border-radius:50%;
-  margin:auto;
-  overflow:hidden;
-  background:#3b292b;
-  border:5px solid rgba(255,255,255,.12);
-  box-shadow:0 20px 50px rgba(0,0,0,.3);
-  margin-bottom:35px;
-}
-
-.cover img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.label{
-  font-size:12px;
-  letter-spacing:4px;
-  color:#cbb8ba;
-  margin-bottom:15px;
-}
-
-.home h1{
-  font-family:Georgia,serif;
-  font-size:clamp(45px,8vw,85px);
-  line-height:.95;
-  letter-spacing:-3px;
-}
-
-.home h1 span{
-  display:block;
-  font-size:.5em;
-  letter-spacing:0;
-  color:#d6c0c2;
-  margin-top:12px;
-}
-
-.deskripsi{
-  max-width:570px;
-  margin:25px auto;
-  color:#bcaeaf;
-  line-height:1.8;
-  font-size:15px;
-}
-
-.mulai{
-  border:0;
-  background:white;
-  color:#27191b;
-  padding:16px 30px;
-  border-radius:50px;
-  font-weight:bold;
-  transition:.3s;
-}
-
-.mulai:hover{
-  transform:translateY(-4px);
-  box-shadow:0 15px 35px rgba(0,0,0,.3);
-}
-
-.mulai span{
-  margin-left:20px;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-.header{
-  height:75px;
-  background:rgba(247,242,238,.95);
-  border-bottom:1px solid #e3d7d2;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 6%;
-  position:sticky;
-  top:0;
-  z-index:50;
-  backdrop-filter:blur(10px);
-}
-
-.header button{
-  background:none;
-  border:0;
-  color:#302427;
-  font-weight:bold;
-}
-
-.header-title{
-  font-size:13px;
-  letter-spacing:2px;
-  font-weight:bold;
-}
-
-.header-number{
-  color:#806e70;
-  font-size:12px;
-}
-
-
-/* =========================
-   MENU
-========================= */
-
-.menu{
-  min-height:100vh;
-  background:#f7f2ee;
-}
-
-.menu-content{
-  max-width:1100px;
-  width:90%;
-  margin:auto;
-  padding:80px 0;
-}
-
-.section-label{
-  font-size:11px;
-  letter-spacing:3px;
-  color:#8f3038;
-  font-weight:bold;
-  margin-bottom:12px;
-}
-
-.menu h2,
-.materi h2{
-  font-family:Georgia,serif;
-  color:#27191b;
-  font-size:clamp(40px,6vw,65px);
-  line-height:1;
-}
-
-.subjudul{
-  color:#806e70;
-  margin:18px 0 45px;
-}
-
-.grid-menu{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-
-.kartu{
-  min-height:230px;
-  background:white;
-  border:1px solid #e4d8d3;
-  border-radius:22px;
-  padding:25px;
-  text-align:left;
-  position:relative;
-  transition:.3s;
-}
-
-.kartu:hover{
-  transform:translateY(-8px);
-  border-color:#b45c63;
-  box-shadow:0 20px 50px rgba(50,25,28,.12);
-}
-
-.nomor{
-  color:#8f3038;
-  font-size:11px;
-  font-weight:bold;
-}
-
-.ikon{
-  display:block;
-  font-size:35px;
-  color:#8f3038;
-  margin:25px 0 18px;
-}
-
-.kartu strong{
-  display:block;
-  font-size:14px;
-  line-height:1.3;
-}
-
-.kartu small{
-  display:block;
-  color:#806e70;
-  font-size:11px;
-  line-height:1.5;
-  margin-top:9px;
-}
-
-.panah{
-  position:absolute;
-  bottom:20px;
-  right:23px;
-  color:#8f3038;
-  font-size:20px;
-}
-
-
-/* =========================
-   HALAMAN MATERI
-========================= */
-
-.materi{
-  min-height:100vh;
-  background:#f7f2ee;
-}
-
-.materi-content{
-  width:90%;
-  max-width:1050px;
-  margin:auto;
-  padding:70px 0 100px;
-}
-
-.judul-materi{
-  margin-bottom:40px;
-}
-
-.judul-materi p:last-child{
-  color:#806e70;
-  line-height:1.7;
-  margin-top:18px;
-}
-
-.gambar{
-  background:white;
-  border:1px solid #e4d8d3;
-  border-radius:25px;
-  overflow:hidden;
-  margin-bottom:25px;
-  min-height:250px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.gambar img{
-  width:100%;
-  max-height:550px;
-  object-fit:contain;
-  display:block;
-}
-
-.placeholder{
-  padding:80px 20px;
-  text-align:center;
-  color:#806e70;
-}
-
-.placeholder b{
-  display:block;
-  color:#8f3038;
-  margin-bottom:10px;
-}
-
-
-/* =========================
-   TOMBOL INTERAKTIF
-========================= */
-
-.tombol-info{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:25px 0;
-}
-
-.tombol-info button{
-  background:white;
-  border:1px solid #dfd2cd;
-  border-radius:50px;
-  padding:13px 18px;
-  font-size:11px;
-  font-weight:bold;
-  transition:.25s;
-}
-
-.tombol-info button:hover{
-  background:#8f3038;
-  color:white;
-}
-
-.info{
-  background:#eee3de;
-  padding:25px;
-  border-radius:18px;
-  line-height:1.7;
-  margin-bottom:35px;
-}
-
-.next{
-  float:right;
-  border:0;
-  background:#8f3038;
-  color:white;
-  padding:15px 23px;
-  border-radius:50px;
-  font-weight:bold;
-}
-
-
-/* =========================
-   FLOW
-========================= */
-
-.flow{
-  background:white;
-  border:1px solid #e3d7d2;
-  border-radius:25px;
-  padding:40px 20px;
-  text-align:center;
-}
-
-.step{
-  width:min(450px,90%);
-  margin:auto;
-  padding:18px;
-  background:#eee3de;
-  border-radius:14px;
-  font-size:13px;
-  font-weight:bold;
-}
-
-.arrow-down{
-  color:#8f3038;
-  padding:10px;
-  font-size:20px;
-}
-
-.step.akhir{
-  background:#8f3038;
-  color:white;
-}
-
-
-/* =========================
-   KONTRAKSI
-========================= */
-
-.mulai-kontraksi{
-  width:100%;
-  border:0;
-  background:#27191b;
-  color:white;
-  padding:18px;
-  border-radius:15px;
-  font-weight:bold;
-  margin-bottom:25px;
-}
-
-.langkah-kontraksi{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-}
-
-.langkah{
-  background:white;
-  border:1px solid #e3d7d2;
-  border-radius:18px;
-  padding:25px;
-  opacity:.3;
-  transform:translateY(10px);
-  transition:.5s;
-}
-
-.langkah.aktif{
-  opacity:1;
-  transform:translateY(0);
-  box-shadow:0 15px 35px rgba(50,25,28,.1);
-}
-
-.langkah b{
-  color:#8f3038;
-  display:block;
-  margin-bottom:12px;
-}
-
-
-/* =========================
-   ENERGI
-========================= */
-
-.energi-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.energi-grid button{
-  background:white;
-  border:1px solid #e3d7d2;
-  border-radius:20px;
-  padding:35px 20px;
-  transition:.3s;
-}
-
-.energi-grid button:hover{
-  transform:translateY(-5px);
-  border-color:#8f3038;
-}
-
-.energi-grid b,
-.energi-grid span{
-  display:block;
-}
-
-.energi-grid b{
-  font-size:20px;
-}
-
-.energi-grid span{
-  color:#806e70;
-  margin-top:8px;
-}
-
-
-/* =========================
-   KARAKTERISTIK
-========================= */
-
-.karakteristik-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
-
-.karakteristik-grid button{
-  background:white;
-  border:1px solid #e3d7d2;
-  border-radius:18px;
-  padding:22px 10px;
-  font-weight:bold;
-  transition:.25s;
-}
-
-.karakteristik-grid button:hover{
-  background:#8f3038;
-  color:white;
-}
-
-
-/* =========================
-   KELAINAN
-========================= */
-
-.kelainan-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.kelainan-card{
-  background:white;
-  border:1px solid #e3d7d2;
-  border-radius:22px;
-  overflow:hidden;
-}
-
-.kelainan-card .isi{
-  padding:25px;
-}
-
-.kelainan-card span{
-  color:#8f3038;
-  font-size:11px;
-  font-weight:bold;
-}
-
-.kelainan-card h3{
-  margin:14px 0 12px;
-}
-
-.kelainan-card p{
-  color:#806e70;
-  font-size:13px;
-  line-height:1.6;
-}
-
-.kelainan-card img{
-  width:100%;
-  max-height:230px;
-  object-fit:contain;
-}
-
-
-/* =========================
-   MODAL
-========================= */
-
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(20,10,12,.65);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-  z-index:100;
-}
-
-.modal-box{
-  width:min(520px,100%);
-  background:white;
-  border-radius:25px;
-  padding:40px;
-  position:relative;
-}
-
-.modal-box h3{
-  font-family:Georgia,serif;
-  font-size:32px;
-  margin-bottom:15px;
-}
-
-.modal-box p:last-child{
-  color:#806e70;
-  line-height:1.8;
-}
-
-.tutup{
-  position:absolute;
-  top:15px;
-  right:20px;
-  border:0;
-  background:none;
-  font-size:30px;
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:900px){
-
-  .grid-menu{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .langkah-kontraksi{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .karakteristik-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .kelainan-grid{
-    grid-template-columns:1fr;
-  }
-
-}
-
-@media(max-width:600px){
-
-  .grid-menu,
-  .energi-grid,
-  .langkah-kontraksi,
-  .karakteristik-grid{
-    grid-template-columns:1fr;
-  }
-
-  .anggota{
-    flex-direction:column;
-  }
-
-  .home h1{
-    letter-spacing:-1px;
-  }
-
-  .cover{
-    width:150px;
-    height:150px;
-  }
-
-  .header{
-    padding:0 20px;
-  }
-
-  .header-number{
-    display:none;
-  }
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Otot - Presentasi Interaktif Anatomi & Fisiologi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .page-section { display: none; }
+        .page-section.active { display: block; animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-
-
-<body>
-
-
-<!-- ==================================================
-     HOME
-================================================== -->
-
-<section id="home" class="home">
-
-  <div class="home-content">
-
-    <div class="kelompok">
-      KELOMPOK 12
-    </div>
-
-    <div class="anggota">
-      <span>Muhamad Ridlo Haikal</span>
-      <span>Chika Nurhafidzah Angela</span>
-      <span>Syapiq Ilham</span>
-      <span>Ghaly Fayi Al Hazmi</span>
-    </div>
-
-    <div class="cover">
-
-      <!-- GANTI cover.jpg DENGAN GAMBAR DARI MAKALAH -->
-
-      <img
-        src="images/cover.jpg"
-        alt="Gambar sistem otot"
-        onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding:70px 10px;font-size:12px;color:#cbb8ba\'>GAMBAR MAKALAH</div>'"
-      >
-
-    </div>
-
-    <div class="label">
-      ANATOMI & FISIOLOGI MANUSIA
-    </div>
-
-    <h1>
-      SISTEM OTOT
-      <span>(MUSKULAR)</span>
-    </h1>
-
-    <p class="deskripsi">
-      Memahami struktur, mekanisme kontraksi,
-      relaksasi, sumber energi, dan kelainan
-      pada sistem otot manusia.
-    </p>
-
-    <button class="mulai" onclick="halaman('menu')">
-      MULAI
-      <span>→</span>
-    </button>
-
-  </div>
-
-</section>
-
-
-
-<!-- ==================================================
-     MENU UTAMA
-================================================== -->
-
-<section id="menu" class="menu hidden">
-
-  <header class="header">
-
-    <button onclick="halaman('home')">
-      ← Home
-    </button>
-
-    <div class="header-title">
-      SISTEM OTOT
-    </div>
-
-    <div class="header-number">
-      08 MATERI
-    </div>
-
-  </header>
-
-
-  <main class="menu-content">
-
-    <div class="section-label">
-      ANATOMI & FISIOLOGI MANUSIA
-    </div>
-
-    <h2>
-      Pelajari Sistem Otot
-    </h2>
-
-    <p class="subjudul">
-      Pilih materi yang ingin dipelajari.
-    </p>
-
-
-    <div class="grid-menu">
-
-
-      <button class="kartu" onclick="halaman('anatomi')">
-
-        <span class="nomor">01</span>
-
-        <span class="ikon">◉</span>
-
-        <strong>ANATOMI OTOT</strong>
-
-        <small>
-          Struktur makroskopis dan mikroskopis
-        </small>
-
-        <span class="panah">→</span>
-
-      </button>
-
-
-      <button class="kartu" onclick="halaman('sarkomer')">
-
-        <span class="nomor">02</span>
-
-        <span class="ikon">◌</span>
-
-        <strong>SARKOMER</strong>
-
-        <small>
-          Aktin, miosin dan protein pengatur
-        </small>
-
-        <span class="panah">→</span>
-
-      </button>
-
-
-      <button class="kartu" onclick="halaman('nmj')">
-
-        <span class="nomor">03</span>
-
-        <span class="ikon">⚡</span>
-
-        <strong>NEUROMUSCULAR<br>JUNCTION</strong>
-
-        <small>
-          Transmisi sinyal saraf menuju otot
-        </small>
-
-        <span class="panah">→</span>
-
-      </button>
-
-
-      <button class="kartu" onclick="halaman('kontraksi')">
-
-        <span class="nomor">04</span>
-
-        <span class="ikon">↔</span>
-
-        <strong>KONTRAKSI OTOT</strong>
-
-        <small>
-          Mekanisme sliding filament
-        </small>
-
-        <span class="panah">→</span>
-
-      </button>
-
-
-      <button class="kartu" onclick="halaman('relaksasi')">
-
-        <span class="nomor">05</span>
-
-        <span class="ikon">↻</span>
-
-        <strong>RELAKSASI & SERCA</strong>
-
-        <small>
-          Peran Ca²⁺ dalam relaksasi
-        </small>
-
-        <span class="panah">→</span>
-
-      </button>
-
-
-      <button class="kartu" onclick="halaman('energi')">
-
-        <span class="nomor">06</span>
-
-        <span class="ikon">⚡</span>
-
-        <strong>SUMBER ENERGI</strong>
-
-        <small>
-          ATP-PC, anaerobik dan aerobik
-        </small>
-
-        <span class="panah">→</span>
-
-      </button>
-
-
-      <button class="kartu" onclick="halaman('karakteristik')">
-
-        <span class="nomor">07</span>
-
-        <span class="ikon">∿</span>
-
-        <strong>KARAKTERISTIK<br>KONTRAKSI</strong>
-
-        <small>
-          Twitch, sumasi, tetanus dan fatigue
-        </small>
-
-        <span class="panah">→</span>
-
-      </button>
-
-
-      <button class="kartu" onclick="halaman('kelainan')">
-
-        <span class="nomor">08</span>
-
-        <span class="ikon">+</span>
-
-        <strong>KELAINAN OTOT</strong>
-
-        <small>
-          DMD, Myasthenia Gravis dan lainnya
-        </small>
-
-        <span class="panah">→</span>
-
-      </button>
-
-
-    </div>
-
-  </main>
-
-</section>
-
-
-
-<!-- ==================================================
-     01 ANATOMI
-================================================== -->
-
-<section id="anatomi" class="materi hidden">
-
-  <header class="header">
-
-    <button onclick="halaman('menu')">
-      ← Menu
-    </button>
-
-    <div class="header-title">
-      01 / ANATOMI
-    </div>
-
-    <div></div>
-
-  </header>
-
-
-  <main class="materi-content">
-
-    <div class="judul-materi">
-
-      <div class="section-label">
-        01 — STRUKTUR
-      </div>
-
-      <h2>
-        Anatomi Otot
-      </h2>
-
-      <p>
-        Struktur makroskopis dan mikroskopis jaringan otot.
-      </p>
-
-    </div>
-
-
-    <div class="gambar">
-
-      <img
-        src="images/anatomi.jpg"
-        alt="Anatomi otot"
-        onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder\'><b>GAMBAR ANATOMI</b>Masukkan gambar anatomi dari makalah ke folder images.</div>'"
-      >
-
-    </div>
-
-
-    <div class="tombol-info">
-
-      <button onclick="info('Epimisium','Lapisan jaringan ikat yang membungkus bagian terluar seluruh otot.')">
-        EPIMISIUM
-      </button>
-
-      <button onclick="info('Perimisium','Lapisan jaringan ikat yang membungkus fasikulus atau berkas serat otot.')">
-        PERIMISIUM
-      </button>
-
-      <button onclick="info('Endomisium','Lapisan jaringan ikat tipis yang membungkus setiap serat otot.')">
-        ENDOMISIUM
-      </button>
-
-      <button onclick="info('Tendon','Jaringan yang berperan menghubungkan otot dengan struktur tempat melekatnya.')">
-        TENDON
-      </button>
-
-    </div>
-
-
-    <div class="info">
-      Klik salah satu bagian anatomi untuk melihat penjelasan.
-    </div>
-
-
-    <button class="next" onclick="halaman('sarkomer')">
-      SARKOMER →
-    </button>
-
-  </main>
-
-</section>
-
-
-
-<!-- ==================================================
-     02 SARKOMER
-================================================== -->
-
-<section id="sarkomer" class="materi hidden">
-
-  <header class="header">
-
-    <button onclick="halaman('menu')">
-      ← Menu
-    </button>
-
-    <div class="header-title">
-      02 / SARKOMER
-    </div>
-
-    <div></div>
-
-  </header>
-
-
-  <main class="materi-content">
-
-    <div class="judul-materi">
-
-      <div class="section-label">
-        02 — STRUKTUR MIKROSKOPIS
-      </div>
-
-      <h2>
-        Sarkomer
-      </h2>
-
-      <p>
-        Unit struktural dan fungsional dasar pada miofibril.
-      </p>
-
-    </div>
-
-
-    <div class="gambar">
-
-      <img
-        src="images/sarkomer.jpg"
-        alt="Sarkomer"
-        onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder\'><b>GAMBAR SARKOMER</b>Masukkan gambar sarkomer dari makalah.</div>'"
-      >
-
-    </div>
-
-
-    <div class="tombol-info">
-
-      <button onclick="info('Aktin','Filamen tipis yang berinteraksi dengan miosin dalam mekanisme kontraksi.')">
-        AKTIN
-      </button>
-
-      <button onclick="info('Miosin','Filamen tebal yang memiliki kepala miosin untuk berinteraksi dengan aktin.')">
-        MIOSIN
-      </button>
-
-      <button onclick="info('Troponin','Protein pengatur yang berperan dalam pengaturan interaksi aktin dan miosin.')">
-        TROPONIN
-      </button>
-
-      <button onclick="info('Tropomiosin','Protein yang berasosiasi dengan aktin dan berperan dalam pengaturan kontraksi.')">
-        TROPOMIOSIN
-      </button>
-
-    </div>
-
-
-    <div class="info">
-      Klik komponen sarkomer untuk melihat penjelasan.
-    </div>
-
-
-    <button class="next" onclick="halaman('nmj')">
-      NEUROMUSCULAR JUNCTION →
-    </button>
-
-  </main>
-
-</section>
-
-
-
-<!-- ==================================================
-     03 NMJ
-================================================== -->
-
-<section id="nmj" class="materi hidden">
-
-  <header class="header">
-
-    <button onclick="halaman('menu')">
-      ← Menu
-    </button>
-
-    <div class="header-title">
-      03 / NMJ
-    </div>
-
-    <div></div>
-
-  </header>
-
-
-  <main class="materi-content">
-
-    <div class="judul-materi">
-
-      <div class="section-label">
-        03 — TRANSMISI
-      </div>
-
-      <h2>
-        Neuromuscular Junction
-      </h2>
-
-      <p>
-        Proses transmisi sinyal dari neuron motorik menuju serat otot.
-      </p>
-
-    </div>
-
-
-    <div class="flow">
-
-      <div class="step">
-        POTENSIAL AKSI
-      </div>
-
-      <div class="arrow-down">↓</div>
-
-      <div class="step">
-        Ca²⁺ MASUK
-      </div>
-
-      <div class="arrow-down">↓</div>
-
-      <div class="step">
-        PELEPASAN ACh
-      </div>
-
-      <div class="arrow-down">↓</div>
-
-      <div class="step">
-        ACh + RESEPTOR
-      </div>
-
-      <div class="arrow-down">↓</div>
-
-      <div class="step">
-        DEPOLARISASI
-      </div>
-
-      <div class="arrow-down">↓</div>
-
-      <div class="step akhir">
-        POTENSIAL AKSI OTOT
-      </div>
-
-    </div>
-
-
-    <br><br>
-
-    <button class="next" onclick="halaman('kontraksi')">
-      KONTRAKSI OTOT →
-    </button>
-
-  </main>
-
-</section>
-
-
-
-<!-- ==================================================
-     04 KONTRAKSI
-================================================== -->
-
-<section id="kontraksi" class="materi hidden">
-
-  <header class="header">
-
-    <button onclick="halaman('menu')">
-      ← Menu
-    </button>
-
-    <div class="header-title">
-      04 / KONTRAKSI
-    </div>
-
-    <div></div>
-
-  </header>
-
-
-  <main class="materi-content">
-
-    <div class="judul-materi">
-
-      <div class="section-label">
-        04 — MEKANISME
-      </div>
-
-      <h2>
-        Mekanisme Kontraksi
-      </h2>
-
-      <p>
-        Interaksi aktin dan miosin menghasilkan kontraksi otot.
-      </p>
-
-    </div>
-
-
-    <div class="gambar">
-
-      <img
-        src="images/kontraksi.jpg"
-        alt="Mekanisme kontraksi"
-        onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder\'><b>GAMBAR KONTRAKSI</b>Masukkan gambar mekanisme kontraksi dari makalah.</div>'"
-      >
-
-    </div>
-
-
-    <button class="mulai-kontraksi" onclick="mulaiKontraksi()">
-      ▶ MULAI MEKANISME KONTRAKSI
-    </button>
-
-
-    <div class="langkah-kontraksi">
-
-      <div class="langkah">
-        <b>01</b>
-        Ca²⁺ dilepaskan
-      </div>
-
-      <div class="langkah">
-        <b>02</b>
-        Ca²⁺ berikatan dengan troponin
-      </div>
-
-      <div class="langkah">
-        <b>03</b>
-        Tropomiosin bergeser
-      </div>
-
-      <div class="langkah">
-        <b>04</b>
-        Miosin berikatan dengan aktin
-      </div>
-
-      <div class="langkah">
-        <b>05</b>
-        Terjadi power stroke
-      </div>
-
-      <div class="langkah">
-        <b>06</b>
-        Sarkomer memendek
-      </div>
-
-    </div>
-
-
-    <br>
-
-    <button class="next" onclick="halaman('relaksasi')">
-      RELAKSASI & SERCA →
-    </button>
-
-  </main>
-
-</section>
-
-
-
-<!-- ==================================================
-     05 RELAKSASI
-================================================== -->
-
-<section id="relaksasi" class="materi hidden">
-
-  <header class="header">
-
-    <button onclick="halaman('menu')">
-      ← Menu
-    </button>
-
-    <div class="header-title">
-      05 / RELAKSASI
-    </div>
-
-    <div></div>
-
-  </header>
-
-
-  <main class="materi-content">
-
-    <div class="judul-materi">
-
-      <div class="section-label">
-        05 — RELAKSASI
-      </div>
-
-      <h2>
-        Relaksasi & SERCA
-      </h2>
-
-      <p>
-        Pengembalian Ca²⁺ berperan dalam proses relaksasi otot.
-      </p>
-
-    </div>
-
-
-    <div class="gambar">
-
-      <img
-        src="images/serca.jpg"
-        alt="SERCA"
-        onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder\'><b>GAMBAR SERCA</b>Masukkan gambar SERCA dari makalah.</div>'"
-      >
-
-    </div>
-
-
-    <div class="flow">
-
-      <div class="step">
-        Ca²⁺ berada di sarkoplasma
-      </div>
-
-      <div class="arrow-down">↓</div>
-
-      <div class="step">
-        SERCA menggunakan ATP
-      </div>
-
-      <div class="arrow-down">↓</div>
-
-      <div class="step">
-        Ca²⁺ dipompa kembali
-      </div>
-
-      <div class="arrow-down">↓</div>
-
-      <div class="step">
-        Ca²⁺ sitosolik menurun
-      </div>
-
-      <div class="arrow-down">↓</div>
-
-      <div class="step akhir">
-        OTOT RELAKSASI
-      </div>
-
-    </div>
-
-
-    <br><br>
-
-    <button class="next" onclick="halaman('energi')">
-      SUMBER ENERGI →
-    </button>
-
-  </main>
-
-</section>
-
-
-
-<!-- ==================================================
-     06 ENERGI
-================================================== -->
-
-<section id="energi" class="materi hidden">
-
-  <header class="header">
-
-    <button onclick="halaman('menu')">
-      ← Menu
-    </button>
-
-    <div class="header-title">
-      06 / ENERGI
-    </div>
-
-    <div></div>
-
-  </header>
-
-
-  <main class="materi-content">
-
-    <div class="judul-materi">
-
-      <div class="section-label">
-        06 — ENERGI
-      </div>
-
-      <h2>
-        Sumber Energi
-      </h2>
-
-      <p>
-        Sistem energi yang mendukung aktivitas kontraksi otot.
-      </p>
-
-    </div>
-
-
-    <div class="energi-grid">
-
-      <button onclick="info('ATP-PC / Fosfagen','Sistem penyedia energi cepat untuk kebutuhan energi segera.')">
-
-        <b>ATP-PC</b>
-
-        <span>
-          Fosfagen
-        </span>
-
-      </button>
-
-
-      <button onclick="info('Glikolisis Anaerobik','Sistem pembentukan energi melalui glikolisis tanpa penggunaan oksigen secara langsung.')">
-
-        <b>ANAEROBIK</b>
-
-        <span>
-          Glikolisis
-        </span>
-
-      </button>
-
-
-      <button onclick="info('Respirasi Aerobik','Pembentukan energi melalui proses metabolisme yang menggunakan oksigen.')">
-
-        <b>AEROBIK</b>
-
-        <span>
-          Respirasi
-        </span>
-
-      </button>
-
-    </div>
-
-
-    <br>
-
-
-    <div class="gambar">
-
-      <img
-        src="images/energi.jpg"
-        alt="Sumber energi otot"
-        onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder\'><b>GAMBAR SUMBER ENERGI</b>Masukkan gambar dari makalah.</div>'"
-      >
-
-    </div>
-
-
-    <button class="next" onclick="halaman('karakteristik')">
-      KARAKTERISTIK KONTRAKSI →
-    </button>
-
-  </main>
-
-</section>
-
-
-
-<!-- ==================================================
-     07 KARAKTERISTIK
-================================================== -->
-
-<section id="karakteristik" class="materi hidden">
-
-  <header class="header">
-
-    <button onclick="halaman('menu')">
-      ← Menu
-    </button>
-
-    <div class="header-title">
-      07 / KARAKTERISTIK
-    </div>
-
-    <div></div>
-
-  </header>
-
-
-  <main class="materi-content">
-
-    <div class="judul-materi">
-
-      <div class="section-label">
-        07 — KARAKTERISTIK
-      </div>
-
-      <h2>
-        Karakteristik Kontraksi
-      </h2>
-
-      <p>
-        Respons otot terhadap rangsangan dan aktivitas berulang.
-      </p>
-
-    </div>
-
-
-    <div class="gambar">
-
-      <img
-        src="images/karakteristik-kontraksi.jpg"
-        alt="Karakteristik kontraksi"
-        onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder\'><b>GAMBAR KARAKTERISTIK</b>Masukkan gambar dari makalah.</div>'"
-      >
-
-    </div>
-
-
-    <div class="karakteristik-grid">
-
-      <button onclick="info('Twitch','Respons kontraksi tunggal terhadap satu stimulus.')">
-        TWITCH
-      </button>
-
-      <button onclick="info('Sumasi','Peningkatan kekuatan kontraksi akibat stimulus yang datang sebelum relaksasi selesai.')">
-        SUMASI
-      </button>
-
-      <button onclick="info('Tetanus','Kontraksi yang terjadi akibat stimulus berulang dengan frekuensi tinggi.')">
-        TETANUS
-      </button>
-
-      <button onclick="info('Kelelahan Otot','Penurunan kemampuan otot mempertahankan kekuatan kontraksi.')">
-        FATIGUE
-      </button>
-
-    </div>
-
-
-    <br>
-
-    <button class="next" onclick="halaman('kelainan')">
-      KELAINAN OTOT →
-    </button>
-
-  </main>
-
-</section>
-
-
-
-<!-- ==================================================
-     08 KELAINAN
-================================================== -->
-
-<section id="kelainan" class="materi hidden">
-
-  <header class="header">
-
-    <button onclick="halaman('menu')">
-      ← Menu
-    </button>
-
-    <div class="header-title">
-      08 / KELAINAN
-    </div>
-
-    <div></div>
-
-  </header>
-
-
-  <main class="materi-content">
-
-    <div class="judul-materi">
-
-      <div class="section-label">
-        08 — KELAINAN
-      </div>
-
-      <h2>
-        Kelainan Otot
-      </h2>
-
-      <p>
-        Beberapa gangguan yang dapat memengaruhi sistem otot.
-      </p>
-
-    </div>
-
-
-    <div class="kelainan-grid">
-
-
-      <article class="kelainan-card">
-
-        <div class="isi">
-
-          <span>01</span>
-
-          <h3>
-            Duchenne Muscular Dystrophy
-          </h3>
-
-          <p>
-            Kelainan distrofi otot yang berkaitan dengan gangguan
-            pada struktur dan fungsi otot.
-          </p>
-
+<body class="bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER / NAVIGATION BAR -->
+    <header class="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3 cursor-pointer" onclick="showSection(0)">
+            <div class="bg-teal-500 text-slate-950 p-2 rounded-lg font-bold">
+                <i class="fa-solid fa-dna"></i>
+            </div>
+            <div>
+                <span class="font-extrabold text-white text-base tracking-wide block leading-none">SISTEM OTOT</span>
+                <span class="text-[10px] text-teal-400 font-semibold tracking-wider uppercase">Anatomi & Fisiologi Manusia</span>
+            </div>
         </div>
+        
+        <button onclick="toggleMenuModal()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-xl border border-slate-700 text-sm font-semibold transition flex items-center gap-2">
+            <i class="fa-solid fa-list-ul text-teal-400"></i>
+            <span>Daftar Perjalanan Materi</span>
+        </button>
+    </header>
 
-        <img
-          src="images/dmd.jpg"
-          alt="Duchenne Muscular Dystrophy"
-        >
-
-      </article>
-
-
-      <article class="kelainan-card">
-
-        <div class="isi">
-
-          <span>02</span>
-
-          <h3>
-            Myasthenia Gravis
-          </h3>
-
-          <p>
-            Gangguan pada transmisi neuromuskular yang memengaruhi
-            komunikasi antara saraf dan otot.
-          </p>
-
+    <!-- MODAL MENU DAFTAR PERJALANAN MATERI -->
+    <div id="menuModal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-lg z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full p-6 md:p-8 space-y-6 max-h-[90vh] overflow-y-auto shadow-2xl">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-4">
+                <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-route text-teal-400"></i> Alur Perjalanan Materi
+                </h3>
+                <button onclick="toggleMenuModal()" class="text-slate-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="grid grid-cols-1 gap-2 text-sm font-medium">
+                <button onclick="showSection(0); toggleMenuModal();" class="text-left p-3.5 rounded-xl bg-slate-800/50 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-700/50 flex justify-between items-center">
+                    <span>Beranda & Anggota Kelompok</span>
+                    <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                </button>
+                <button onclick="showSection(1); toggleMenuModal();" class="text-left p-3.5 rounded-xl bg-slate-800/50 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-700/50 flex justify-between items-center">
+                    <div><span class="text-teal-400 font-mono font-bold mr-2">01</span> MENGENAL OTOT (Anatomi Makro & Mikroskopis)</div>
+                    <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                </button>
+                <button onclick="showSection(2); toggleMenuModal();" class="text-left p-3.5 rounded-xl bg-slate-800/50 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-700/50 flex justify-between items-center">
+                    <div><span class="text-teal-400 font-mono font-bold mr-2">02</span> UNIT KONTRAKSI (Struktur & Komponen Sarkomer)</div>
+                    <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                </button>
+                <button onclick="showSection(3); toggleMenuModal();" class="text-left p-3.5 rounded-xl bg-slate-800/50 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-700/50 flex justify-between items-center">
+                    <div><span class="text-teal-400 font-mono font-bold mr-2">03</span> DARI SARAF KE OTOT (Neuromuscular Junction)</div>
+                    <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                </button>
+                <button onclick="showSection(4); toggleMenuModal();" class="text-left p-3.5 rounded-xl bg-slate-800/50 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-700/50 flex justify-between items-center">
+                    <div><span class="text-teal-400 font-mono font-bold mr-2">04</span> SAAT OTOT BERKONTRAKSI (Sliding Filament Theory)</div>
+                    <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                </button>
+                <button onclick="showSection(5); toggleMenuModal();" class="text-left p-3.5 rounded-xl bg-slate-800/50 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-700/50 flex justify-between items-center">
+                    <div><span class="text-teal-400 font-mono font-bold mr-2">05</span> RELAKSASI OTOT (Peran Kalsium & Pompa SERCA)</div>
+                    <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                </button>
+                <button onclick="showSection(6); toggleMenuModal();" class="text-left p-3.5 rounded-xl bg-slate-800/50 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-700/50 flex justify-between items-center">
+                    <div><span class="text-teal-400 font-mono font-bold mr-2">06</span> BAHAN BAKAR OTOT (Metabolisme Energi)</div>
+                    <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                </button>
+                <button onclick="showSection(7); toggleMenuModal();" class="text-left p-3.5 rounded-xl bg-slate-800/50 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-700/50 flex justify-between items-center">
+                    <div><span class="text-teal-400 font-mono font-bold mr-2">07</span> RESPON MEKANIS (Twitch, Sumasi, Tetanus & Fatigue)</div>
+                    <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                </button>
+                <button onclick="showSection(8); toggleMenuModal();" class="text-left p-3.5 rounded-xl bg-slate-800/50 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-700/50 flex justify-between items-center">
+                    <div><span class="text-teal-400 font-mono font-bold mr-2">08</span> PATOFISIOLOGI (Kelainan Pada Sistem Otot)</div>
+                    <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                </button>
+            </div>
         </div>
-
-        <img
-          src="images/myasthenia.jpg"
-          alt="Myasthenia Gravis"
-        >
-
-      </article>
-
-
-      <article class="kelainan-card">
-
-        <div class="isi">
-
-          <span>03</span>
-
-          <h3>
-            Distrofi Miotonik
-          </h3>
-
-          <p>
-            Kelainan yang dapat berkaitan dengan kelemahan otot
-            dan gangguan relaksasi.
-          </p>
-
-        </div>
-
-      </article>
-
-
     </div>
 
+    <!-- AREA UTAMA PRESENTASI -->
+    <main class="max-w-5xl mx-auto px-6 py-8 flex-1 w-full">
 
-    <br><br>
+        <!-- SECTION 0: HOME / BERANDA -->
+        <section class="page-section active space-y-10">
+            <div class="text-center space-y-4 pt-6">
+                <span class="bg-teal-500/10 text-teal-400 border border-teal-500/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-block">
+                    Modul Presentasi Interaktif
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                    SISTEM OTOT <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">(MUSKULAR)</span>
+                </h1>
+                <p class="text-slate-400 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+                    Eksplorasi komprehensif struktur anatomi hirarkis, mekanisme molekuler kontraksi-relaksasi, bioenergetika, hingga patofisiologi sistem muskular pada manusia.
+                </p>
+                <div class="pt-4">
+                    <button onclick="showSection(1)" class="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-slate-950 font-extrabold px-8 py-4 rounded-2xl shadow-lg shadow-teal-500/20 transition transform hover:-translate-y-0.5 flex items-center gap-3 mx-auto text-sm md:text-base">
+                        <span>MULAI MEMPELAJARI</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
 
+            <!-- GAMBAR UTAMA UTAMA MAKALLAH -->
+            <div class="bg-slate-900 border border-slate-800 p-4 md:p-6 rounded-3xl text-center space-y-3">
+                <div class="bg-slate-950 rounded-2xl p-4 border border-slate-800 flex items-center justify-center min-h-[260px]">
+                    <img src="gambar_utama.jpg" alt="Sistem Otot Manusia" class="max-h-80 object-contain rounded-lg">
+                </div>
+                <p class="text-xs text-slate-500 italic">*Gambar Utama: Gambaran Umum Sistem Muskuloskeletal Manusia</p>
+            </div>
 
-    <button class="next" onclick="halaman('menu')">
-      ← KEMBALI KE MENU
-    </button>
+            <!-- ANGGOTA KELOMPOK -->
+            <div class="bg-slate-900/60 border border-slate-800 p-6 md:p-8 rounded-3xl space-y-6">
+                <div class="border-b border-slate-800 pb-4 flex justify-between items-end">
+                    <div>
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-users text-teal-400"></i> Disusun Oleh Kelompok 12
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-1">Dosen Pengampu: Dr. Dani Ramdani, S.Pd., M.Pd.</p>
+                    </div>
+                    <span class="text-xs font-mono text-teal-400 bg-teal-500/10 px-3 py-1 rounded-full border border-teal-500/20">Biologi UNSIL</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 space-y-1">
+                        <p class="text-xs text-slate-500">Anggota</p>
+                        <p class="font-bold text-slate-200 text-sm">Muhamad Ridlo Haikal</p>
+                        <p class="text-xs font-mono text-teal-400">NIM 222154130</p>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded-2xl border border-teal-500/40 space-y-1 relative overflow-hidden">
+                        <div class="absolute -right-2 -top-2 bg-teal-500/20 text-teal-300 text-[9px] font-bold px-3 py-1 rounded-bl-lg">KITA</div>
+                        <p class="text-xs text-slate-500">Anggota</p>
+                        <p class="font-bold text-white text-sm">Chika Nurhafidzah A.</p>
+                        <p class="text-xs font-mono text-teal-400">NIM 242154111115</p>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 space-y-1">
+                        <p class="text-xs text-slate-500">Anggota</p>
+                        <p class="font-bold text-slate-200 text-sm">Syapiq Ilham</p>
+                        <p class="text-xs font-mono text-teal-400">NIM 242154111127</p>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 space-y-1">
+                        <p class="text-xs text-slate-500">Anggota</p>
+                        <p class="font-bold text-slate-200 text-sm">Ghaly Fayi Al Hazmi</p>
+                        <p class="text-xs font-mono text-teal-400">NIM 242154111131</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  </main>
+        <!-- SECTION 1: MENGENAL OTOT -->
+        <section class="page-section space-y-8">
+            <div class="border-b border-slate-800 pb-4">
+                <span class="text-teal-400 font-mono text-xs font-bold tracking-widest uppercase">Perjalanan 01</span>
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white mt-1">MENGENAL OTOT</h2>
+                <p class="text-slate-400 text-sm">Anatomi Makroskopis & Struktur Mikroskopis Sel Otot Rangka</p>
+            </div>
 
-</section>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div class="space-y-6 text-sm text-slate-300 leading-relaxed">
+                    <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-3">
+                        <h3 class="text-base font-bold text-teal-300">ANATOMI MAKROSKOPIS</h3>
+                        <p>
+                            Otot rangka tersusun secara hirarkis oleh beberapa lapisan jaringan ikat fibrosa. Pembungkus terluar disebut <strong>Epimisium</strong> yang mengelilingi seluruh perut otot. Di bagian dalam, otot terbagi menjadi berkas-berkas fasikulus yang dibungkus oleh <strong>Perimisium</strong>. Setiap serat/sel otot individual di dalam fasikulus selanjutnya dibungkus secara halus oleh <strong>Endomisium</strong>.
+                        </p>
+                    </div>
 
+                    <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-3">
+                        <h3 class="text-base font-bold text-teal-300">STRUKTUR MIKROSKOPIS</h3>
+                        <p>
+                            Sel otot rangka (sitosit) bersifat multinukleat dengan membran sel khusus bernama <strong>Sarkolema</strong>. Membran ini memiliki invaginasi ke dalam sel berbentuk saluran bernama <strong>Tubulus T (Transversus)</strong> yang berfungsi menyalurkan impuls listrik. Di sekeliling miofibril terdapat <strong>Retikulum Sarkoplasma (RS)</strong> sebagai kantung penyimpan ion Kalsium (Ca²⁺).
+                        </p>
+                    </div>
+                </div>
 
+                <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl text-center space-y-3 sticky top-24">
+                    <img src="gambar_bab1.jpg" alt="Anatomi Makro & Mikro Otot" class="max-h-80 object-contain mx-auto rounded-lg bg-slate-950 p-2 border border-slate-800">
+                    <p class="text-xs text-slate-400 italic">*Gambar 1: Hirarki Jaringan Ikat & Struktur Mikroskopis Serat Otot</p>
+                </div>
+            </div>
+        </section>
 
-<!-- ==================================================
-     MODAL INFORMASI
-================================================== -->
+        <!-- SECTION 2: UNIT KONTRAKSI -->
+        <section class="page-section space-y-8">
+            <div class="border-b border-slate-800 pb-4">
+                <span class="text-teal-400 font-mono text-xs font-bold tracking-widest uppercase">Perjalanan 02</span>
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white mt-1">UNIT KONTRAKSI</h2>
+                <p class="text-slate-400 text-sm">Struktur Molekuler Sarkomer & Proteomika Miofibril</p>
+            </div>
 
-<div id="modal" class="modal hidden">
+            <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-4">
+                <h3 class="text-lg font-bold text-teal-300">STRUKTUR SARKOMER</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    Sarkomer merupakan unit struktural dan fungsional dasar yang terdapat pada miofibril. Struktur ini dibatasi oleh dua Garis Z berurutan. Di dalam sarkomer terdapat pita-pita gelap dan terang: <strong>Pita A</strong> (daerah filamen tebal miosin) dan <strong>Pita I</strong> (daerah filamen tipis aktin tanpa tumpang tindih miosin). Interaksi molekuler antara filamen inilah yang memungkinkan terjadinya kontraksi.
+                </p>
+            </div>
 
-  <div class="modal-box">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div class="space-y-4 text-sm text-slate-300">
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-2">
+                        <h4 class="font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-circle text-xs text-teal-400"></i> FILAMEN MIOSIN (TEBAL)
+                        </h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Tersusun atas molekul Miosin II yang memiliki ekor panjang dan dua kepala membulat. Kepala miosin memiliki situs aktif ikatan ATP serta aktivitas enzim ATPase untuk memecah energi.
+                        </p>
+                    </div>
 
-    <button class="tutup" onclick="tutupModal()">
-      ×
-    </button>
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-2">
+                        <h4 class="font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-circle text-xs text-teal-400"></i> FILAMEN AKTIN (TIPIS)
+                        </h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Tersusun atas heliks ganda F-aktin yang memiliki situs aktif (*binding site*) tempat menempelnya kepala miosin saat terjadi kontraksi.
+                        </p>
+                    </div>
 
-    <div class="section-label">
-      INFORMASI
-    </div>
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-2">
+                        <h4 class="font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-circle text-xs text-teal-400"></i> PROTEIN PENGATUR (REGULATORI)
+                        </h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Terdiri dari <strong>Tropomiosin</strong> yang menutupi situs aktif aktin saat otot istirahat, dan <strong>Kompleks Troponin</strong> (Troponin I, T, dan C) yang peka terhadap ion Kalsium.
+                        </p>
+                    </div>
+                </div>
 
-    <h3 id="modalJudul">
-      -
-    </h3>
+                <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl text-center space-y-3 sticky top-24">
+                    <img src="gambar_sarkomer.jpg" alt="Struktur Sarkomer" class="max-h-80 object-contain mx-auto rounded-lg bg-slate-950 p-2 border border-slate-800">
+                    <p class="text-xs text-slate-400 italic">*Gambar 2: Detail Struktur Sarkomer dan Proteomika Filamen</p>
+                </div>
+            </div>
+        </section>
 
-    <p id="modalIsi">
-      -
-    </p>
+        <!-- SECTION 3: DARI SARAF KE OTOT -->
+        <section class="page-section space-y-8">
+            <div class="border-b border-slate-800 pb-4">
+                <span class="text-teal-400 font-mono text-xs font-bold tracking-widest uppercase">Perjalanan 03</span>
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white mt-1">DARI SARAF KE OTOT</h2>
+                <p class="text-slate-400 text-sm">Fisiologi Neuromuscular Junction (NMJ) & Triggers Kalsium</p>
+            </div>
 
-  </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-2">
+                        <h3 class="font-bold text-teal-300">1. Penjalaran Potensial Aksi</h3>
+                        <p class="text-xs text-slate-400">
+                            Sinyal saraf menjalar menyusuri akson neuron motorik alfa hingga mencapai ujung terminal presinaptik.
+                        </p>
+                    </div>
 
-</div>
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-2">
+                        <h3 class="font-bold text-teal-300">2. Pelepasan Asetilkolin (ACh)</h3>
+                        <p class="text-xs text-slate-400">
+                            Influks Ca²⁺ ke terminal saraf memicu vesikel sinaptik melepaskan neurotransmiter Asetilkolin (ACh) ke dalam celah sinaptik melalui eksositosis.
+                        </p>
+                    </div>
 
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-2">
+                        <h3 class="font-bold text-teal-300">3. Eksitasi Sarkolema & Pelepasan Ca²⁺</h3>
+                        <p class="text-xs text-slate-400">
+                            ACh berikatan dengan reseptor nikotinik (nAChR) di motor end-plate memicu depolarisasi. Potensial aksi masuk ke Tubulus T dan merangsang reseptor DHP & RyR di RS untuk melepaskan ion Ca²⁺ ke sitosol.
+                        </p>
+                    </div>
+                </div>
 
+                <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl text-center space-y-3 sticky top-24">
+                    <img src="gambar_nmj.jpg" alt="Neuromuscular Junction" class="max-h-80 object-contain mx-auto rounded-lg bg-slate-950 p-2 border border-slate-800">
+                    <p class="text-xs text-slate-400 italic">*Gambar 3: Tautan Neuromuskular & Pelepasan Asetilkolin</p>
+                </div>
+            </div>
+        </section>
 
-<script>
+        <!-- SECTION 4: SAAT OTOT BERKONTRAKSI -->
+        <section class="page-section space-y-8">
+            <div class="border-b border-slate-800 pb-4">
+                <span class="text-teal-400 font-mono text-xs font-bold tracking-widest uppercase">Perjalanan 04</span>
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white mt-1">SAAT OTOT BERKONTRAKSI</h2>
+                <p class="text-slate-400 text-sm">Siklus Jembatan Silang (Sliding Filament Theory)</p>
+            </div>
 
-/* =========================
-   PINDAH HALAMAN
-========================= */
+            <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-3">
+                <h3 class="text-lg font-bold text-teal-300">MEKANISME SLIDING FILAMENT</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    Kontraksi terjadi ketika filamen tipis aktin bergeser menyusuri filamen tebal miosin ke arah pusat sarkomer (Pita H). Pergeseran ini tidak mengubah panjang asli filamen, melainkan memperpendek lebar keseluruhan sarkomer.
+                </p>
+            </div>
 
-function halaman(id){
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div class="space-y-4 text-sm text-slate-300">
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-1">
+                        <span class="text-xs text-teal-400 font-mono font-bold">Langkah A</span>
+                        <h4 class="font-bold text-white">Pembentukan Cross-Bridge</h4>
+                        <p class="text-xs text-slate-400">
+                            Ion Ca²⁺ berikatan dengan Troponin C, menyingkap tropomiosin. Kepala miosin yang terisi ADP+Pi menempel erat pada situs aktif aktin.
+                        </p>
+                    </div>
 
-  const semuaHalaman =
-    document.querySelectorAll(
-      ".home, .menu, .materi"
-    );
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-1">
+                        <span class="text-xs text-teal-400 font-mono font-bold">Langkah B</span>
+                        <h4 class="font-bold text-white">Power Stroke (Kayuhan Bertenaga)</h4>
+                        <p class="text-xs text-slate-400">
+                            Pelepasan Pi memicu perubahan konformasi miosin untuk menarik aktin ke tengah. ADP dilepaskan di akhir kayuhan.
+                        </p>
+                    </div>
 
-  semuaHalaman.forEach(function(halaman){
-    halaman.classList.add("hidden");
-  });
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-1">
+                        <span class="text-xs text-teal-400 font-mono font-bold">Langkah C</span>
+                        <h4 class="font-bold text-white">Pelepasan & Hidrolisis ATP</h4>
+                        <p class="text-xs text-slate-400">
+                            Molekul ATP baru berikatan dengan miosin sehingga ikatan miosin-aktin terputus. ATP dihidrolisis menjadi ADP+Pi untuk mengokang kembali kepala miosin.
+                        </p>
+                    </div>
+                </div>
 
-  const tujuan =
-    document.getElementById(id);
+                <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl text-center space-y-3 sticky top-24">
+                    <img src="gambar_sliding.jpg" alt="Sliding Filament Theory" class="max-h-80 object-contain mx-auto rounded-lg bg-slate-950 p-2 border border-slate-800">
+                    <p class="text-xs text-slate-400 italic">*Gambar 4: Siklus Daur Ulang Jembatan Silang Miosin-Aktin</p>
+                </div>
+            </div>
+        </section>
 
-  if(tujuan){
-    tujuan.classList.remove("hidden");
-  }
+        <!-- SECTION 5: RELAKSASI OTOT -->
+        <section class="page-section space-y-8">
+            <div class="border-b border-slate-800 pb-4">
+                <span class="text-teal-400 font-mono text-xs font-bold tracking-widest uppercase">Perjalanan 05</span>
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white mt-1">RELAKSASI OTOT</h2>
+                <p class="text-slate-400 text-sm">Pembersihan Sitosol & Peran Pompa Kalsium SERCA</p>
+            </div>
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div class="space-y-6 text-sm text-slate-300 leading-relaxed">
+                    <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-3">
+                        <h3 class="text-base font-bold text-teal-300">DEGRADASI ASETILKOLIN</h3>
+                        <p>
+                            Relaksasi dimulai saat sinyal saraf berhenti. Enzim <strong>Asetilkolinesterase (AChE)</strong> menghancurkan sisa Asetilkolin di celah sinaptik secara cepat sehingga potensial aksi pada sarkolema terhenti.
+                        </p>
+                    </div>
 
+                    <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-3">
+                        <h3 class="text-base font-bold text-teal-300">POMPA SERCA & KONSENTRASI Ca²⁺</h3>
+                        <p>
+                            Pompa kalsium aktif bernama <strong>SERCA (Sarcoplasmic/Endoplasmic Reticulum Calcium ATPase)</strong> memompa kembali ion Ca²⁺ dari sitosol masuk ke dalam Retikulum Sarkoplasma melawan gradien konsentrasi tajam dengan bantuan ATP. Tanpa Ca²⁺, tropomiosin kembali menutup situs aktif aktin.
+                        </p>
+                    </div>
+                </div>
 
-/* =========================
-   POPUP INFORMASI
-========================= */
+                <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl text-center space-y-3 sticky top-24">
+                    <img src="gambar_serca.jpg" alt="Mekanisme Relaksasi SERCA" class="max-h-80 object-contain mx-auto rounded-lg bg-slate-950 p-2 border border-slate-800">
+                    <p class="text-xs text-slate-400 italic">*Gambar 5: Fisiologi Pompa SERCA Dalam Mengembalikan Ion Kalsium</p>
+                </div>
+            </div>
+        </section>
 
-function info(judul, isi){
+        <!-- SECTION 6: BAHAN BAKAR OTOT -->
+        <section class="page-section space-y-8">
+            <div class="border-b border-slate-800 pb-4">
+                <span class="text-teal-400 font-mono text-xs font-bold tracking-widest uppercase">Perjalanan 06</span>
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white mt-1">BAHAN BAKAR OTOT</h2>
+                <p class="text-slate-400 text-sm">Bioenergetika & Tiga Jalur Resintesis ATP</p>
+            </div>
 
-  document.getElementById(
-    "modalJudul"
-  ).textContent = judul;
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-3">
+                    <div class="text-amber-400 text-xl font-extrabold font-mono">01</div>
+                    <h3 class="font-bold text-white text-base">Sistem Fosfagen</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Memanfaatkan simpanan <strong>Kreatin Fosfat (CP)</strong> untuk meresintesis ATP secara instan tanpa oksigen. Digunakan untuk aktivitas intensitas tinggi durasi singkat (6–10 detik).
+                    </p>
+                </div>
 
-  document.getElementById(
-    "modalIsi"
-  ).textContent = isi;
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-3">
+                    <div class="text-rose-400 text-xl font-extrabold font-mono">02</div>
+                    <h3 class="font-bold text-white text-base">Glikolisis Anaerobik</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Memecah glikogen otot menjadi asam laktat tanpa O₂. Menghasilkan 2 ATP per molekul glukosa secara cepat untuk durasi aktivitas sedang (10 detik hingga 2 menit).
+                    </p>
+                </div>
 
-  document.getElementById(
-    "modal"
-  ).classList.remove("hidden");
-}
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-3">
+                    <div class="text-emerald-400 text-xl font-extrabold font-mono">03</div>
+                    <h3 class="font-bold text-white text-base">Fosforilasi Oksidatif</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Respirasi aerobik di mitokondria yang memecah glukosa & asam lemak dengan bantuan O₂. Menghasilkan hingga 36–38 ATP untuk aktivitas ketahanan jangka panjang.
+                    </p>
+                </div>
+            </div>
 
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl text-center space-y-3">
+                <img src="gambar_energi.jpg" alt="Metabolisme Energi Otot" class="max-h-72 object-contain mx-auto rounded-lg bg-slate-950 p-2 border border-slate-800">
+                <p class="text-xs text-slate-400 italic">*Gambar 6: Kontribusi Tiga Jalur Bioenergetika Otot Rangka</p>
+            </div>
+        </section>
 
-function tutupModal(){
+        <!-- SECTION 7: RESPON MEKANIS -->
+        <section class="page-section space-y-8">
+            <div class="border-b border-slate-800 pb-4">
+                <span class="text-teal-400 font-mono text-xs font-bold tracking-widest uppercase">Perjalanan 07</span>
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white mt-1">RESPON MEKANIS</h2>
+                <p class="text-slate-400 text-sm">Muscle Twitch, Sumasi, Tetanus & Kelelahan Otot</p>
+            </div>
 
-  document.getElementById(
-    "modal"
-  ).classList.add("hidden");
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div class="space-y-4 text-sm text-slate-300">
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-2">
+                        <h3 class="font-bold text-teal-300">Kedutan Otot (Muscle Twitch)</h3>
+                        <p class="text-xs text-slate-400">
+                            Respon mekanis tunggal terhadap satu potensial aksi yang terdiri dari tiga fase: Fase Laten, Fase Kontraksi, dan Fase Relaksasi.
+                        </p>
+                    </div>
 
-}
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-2">
+                        <h3 class="font-bold text-teal-300">Sumasi Gelombang & Tetanus</h3>
+                        <p class="text-xs text-slate-400">
+                            Pemberian stimulus berulang sebelum otot relaks penuh menyebabkan penumpukan gaya (Sumasi). Jika frekuensi sangat tinggi, otot mengalami kontraksi maksimal tanpa jeda yang disebut <strong>Tetanus Sempurna</strong>.
+                        </p>
+                    </div>
 
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-2">
+                        <h3 class="font-bold text-teal-300">Kelelahan Otot (Fatigue)</h3>
+                        <p class="text-xs text-slate-400">
+                            Penurunan daya mekanis otot akibat akumulasi metabolit (H⁺, Pi), deplesi glikogen, serta terganggunya pelepasan kalsium dari RS.
+                        </p>
+                    </div>
+                </div>
 
-/* =========================
-   ANIMASI KONTRAKSI
-========================= */
+                <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl text-center space-y-3 sticky top-24">
+                    <img src="gambar_tetanus.jpg" alt="Grafik Twitch dan Tetanus" class="max-h-80 object-contain mx-auto rounded-lg bg-slate-950 p-2 border border-slate-800">
+                    <p class="text-xs text-slate-400 italic">*Gambar 7: Grafik Kurva Kedutan Otot, Sumasi, hingga Tetanus</p>
+                </div>
+            </div>
+        </section>
 
-function mulaiKontraksi(){
+        <!-- SECTION 8: PATOFISIOLOGI -->
+        <section class="page-section space-y-8">
+            <div class="border-b border-slate-800 pb-4">
+                <span class="text-teal-400 font-mono text-xs font-bold tracking-widest uppercase">Perjalanan 08</span>
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white mt-1">PATOFISIOLOGI</h2>
+                <p class="text-slate-400 text-sm">Kelainan & Gangguan Klinis Pada Sistem Otot</p>
+            </div>
 
-  const langkah =
-    document.querySelectorAll(
-      ".langkah"
-    );
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                <div class="bg-slate-900 border border-rose-500/30 p-6 rounded-2xl space-y-3">
+                    <div class="text-rose-400 font-bold text-xs uppercase tracking-wider">Penyakit Genetik</div>
+                    <h3 class="font-bold text-white text-base">Distrofi Muscular Duchenne (DMD)</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Kerusakan mutasi gen yang menyebabkan ketiadaan protein <strong>Distrofin</strong>. Membran sel otot menjadi sangat rapuh, memicu nekrosis selular dan kelemahan otot progresif.
+                    </p>
+                </div>
 
-  langkah.forEach(function(item){
-    item.classList.remove("aktif");
-  });
+                <div class="bg-slate-900 border border-amber-500/30 p-6 rounded-2xl space-y-3">
+                    <div class="text-amber-400 font-bold text-xs uppercase tracking-wider">Penyakit Autoimun</div>
+                    <h3 class="font-bold text-white text-base">Myasthenia Gravis</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Pembentukan autoantibodi yang merusak reseptor Asetilkolin (nAChR) di motor end-plate. Transmisi sinyal terhambat sehingga timbul kelemahan otot yang parah.
+                    </p>
+                </div>
 
-  langkah.forEach(function(item,index){
+                <div class="bg-slate-900 border border-purple-500/30 p-6 rounded-2xl space-y-3">
+                    <div class="text-purple-400 font-bold text-xs uppercase tracking-wider">Gangguan Relaksasi</div>
+                    <h3 class="font-bold text-white text-base">Distrofi Miotonik</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Kelainan multinukleat di mana sel otot tidak mampu melakukan relaksasi secara cepat setelah kontraksi volunter akibat gangguan konduksi ion membran.
+                    </p>
+                </div>
+            </div>
 
-    setTimeout(function(){
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl text-center space-y-3">
+                <img src="gambar_kelainan.jpg" alt="Patofisiologi Otot" class="max-h-72 object-contain mx-auto rounded-lg bg-slate-950 p-2 border border-slate-800">
+                <p class="text-xs text-slate-400 italic">*Gambar 8: Gambaran Klinis Kerusakan Membran dan Reseptor Otot</p>
+            </div>
+        </section>
 
-      item.classList.add("aktif");
+    </main>
 
-    }, index * 700);
+    <!-- FOOTER NAVIGASI (PREV / NEXT) -->
+    <footer class="bg-slate-900/80 backdrop-blur-md border-t border-slate-800 p-4 md:p-6 sticky bottom-0 z-40">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <button id="prevBtn" onclick="navigateSection(-1)" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-5 py-2.5 rounded-xl border border-slate-700 transition text-sm flex items-center gap-2">
+                <i class="fa-solid fa-chevron-left"></i>
+                <span class="hidden sm:inline">Sebelumnya</span>
+            </button>
 
-  });
+            <span id="sectionIndicator" class="text-xs font-mono text-slate-400">
+                Beranda
+            </span>
 
-}
+            <button id="nextBtn" onclick="navigateSection(1)" class="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-teal-500/10 transition text-sm flex items-center gap-2">
+                <span class="hidden sm:inline">Lanjut</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </footer>
 
+    <!-- JAVASCRIPT CONTROLLER -->
+    <script>
+        let currentSection = 0;
+        const sections = document.querySelectorAll('.page-section');
+        const sectionNames = [
+            "Beranda",
+            "01 — Mengenal Otot",
+            "02 — Unit Kontraksi",
+            "03 — Dari Saraf ke Otot",
+            "04 — Saat Otot Berkontraksi",
+            "05 — Relaksasi Otot",
+            "06 — Bahan Bakar Otot",
+            "07 — Respon Mekanis",
+            "08 — Patofisiologi"
+        ];
 
-/* =========================
-   TUTUP MODAL KLIK LUAR
-========================= */
+        function showSection(index) {
+            currentSection = index;
+            sections.forEach((sec, idx) => {
+                sec.classList.toggle('active', idx === index);
+            });
 
-document
-  .getElementById("modal")
-  .addEventListener("click", function(event){
+            document.getElementById('sectionIndicator').textContent = sectionNames[index];
 
-    if(event.target === this){
-      tutupModal();
-    }
+            // Atur status tombol
+            document.getElementById('prevBtn').disabled = currentSection === 0;
+            document.getElementById('prevBtn').classList.toggle('opacity-40', currentSection === 0);
+            
+            if (currentSection === sections.length - 1) {
+                document.getElementById('nextBtn').style.display = 'none';
+            } else {
+                document.getElementById('nextBtn').style.display = 'flex';
+            }
 
-  });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
-</script>
+        function navigateSection(direction) {
+            let target = currentSection + direction;
+            if (target >= 0 && target < sections.length) {
+                showSection(target);
+            }
+        }
 
+        function toggleMenuModal() {
+            const modal = document.getElementById('menuModal');
+            modal.classList.toggle('hidden');
+        }
+
+        showSection(0);
+    </script>
 </body>
 </html>
