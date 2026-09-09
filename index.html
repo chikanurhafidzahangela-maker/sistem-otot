@@ -20,10 +20,7 @@
         line-height: 1.9;
     }
 
-    /* =========================
-       NAVIGASI
-    ========================== */
-
+    /* NAVIGASI */
     nav {
         position: sticky;
         top: 0;
@@ -54,35 +51,29 @@
         color: #b86b55;
     }
 
-    /* =========================
-       COVER
-    ========================== */
-
+    /* COVER */
     .cover {
         min-height: 100vh;
         padding: 80px 8%;
         display: flex;
         align-items: center;
         justify-content: center;
-        background:
-            linear-gradient(rgba(255,248,243,0.88),
-            rgba(255,235,225,0.92));
+        background: linear-gradient(
+            rgba(255,248,243,0.90),
+            rgba(255,235,225,0.95)
+        );
     }
 
     .cover-container {
         max-width: 1200px;
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.2fr 1fr;
         gap: 50px;
         align-items: center;
     }
 
-    .cover-text {
-        padding: 25px;
-    }
-
-    .cover-text .small-title {
+    .small-title {
         letter-spacing: 3px;
         font-size: 14px;
         color: #a96f5b;
@@ -90,37 +81,65 @@
     }
 
     .cover-text h1 {
-        font-size: 58px;
+        font-size: 55px;
         line-height: 1.2;
         margin: 15px 0;
         color: #744c3e;
     }
 
     .cover-text p {
-        font-size: 18px;
+        font-size: 17px;
         color: #624940;
     }
 
+    /* DATA KELOMPOK */
     .cover-info {
-        margin-top: 30px;
-        background: rgba(255,255,255,0.7);
-        padding: 20px;
+        margin-top: 25px;
+        background: rgba(255,255,255,0.80);
+        padding: 25px;
         border-left: 5px solid #d59680;
-        border-radius: 10px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(100,60,40,0.08);
+    }
+
+    .cover-info h3 {
+        color: #744c3e;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    .member {
+        padding: 10px 0;
+    }
+
+    .member b {
+        color: #8f4d3b;
+        font-size: 17px;
+    }
+
+    .cover-info hr {
+        border: none;
+        border-top: 1px solid #efd1c5;
+    }
+
+    /* DOSEN */
+    .lecturer-info {
+        margin-top: 20px;
+        background: #f7d9cb;
+        padding: 18px 22px;
+        border-radius: 15px;
+        color: #744c3e;
     }
 
     .cover-image img {
         width: 100%;
-        max-height: 560px;
+        max-height: 600px;
         object-fit: cover;
         border-radius: 30px;
         box-shadow: 0 15px 40px rgba(100,60,40,0.25);
     }
 
-    /* =========================
-       SECTION UMUM
-    ========================== */
-
+    /* SECTION */
     section {
         padding: 75px 9%;
     }
@@ -142,25 +161,7 @@
         margin: 8px 0;
     }
 
-    .paper-box {
-        max-width: 1050px;
-        margin: auto;
-        background: #ffffff;
-        padding: 45px;
-        border-radius: 20px;
-        box-shadow: 0 10px 35px rgba(100,60,40,0.1);
-    }
-
-    .paper-box h3 {
-        color: #9d604d;
-        font-size: 25px;
-        margin-top: 30px;
-    }
-
-    /* =========================
-       MENU MATERI
-    ========================== */
-
+    /* MENU */
     .menu-section {
         background: #fdece4;
     }
@@ -209,15 +210,7 @@
         font-size: 19px;
     }
 
-    .materi-card p {
-        font-size: 14px;
-        margin-bottom: 0;
-    }
-
-    /* =========================
-       PEMBAHASAN
-    ========================== */
-
+    /* PEMBAHASAN */
     .materi-section {
         max-width: 1150px;
         margin: auto;
@@ -229,7 +222,7 @@
         margin-bottom: 35px;
     }
 
-    .materi-heading .number {
+    .number {
         display: inline-block;
         background: #d88f77;
         color: white;
@@ -241,7 +234,6 @@
     .materi-heading h2 {
         font-size: 35px;
         color: #744c3e;
-        margin-bottom: 5px;
     }
 
     .content-card {
@@ -259,6 +251,12 @@
     .content-card h3 {
         color: #9d604d;
         margin-top: 30px;
+    }
+
+    .content-card ul {
+        background: #fff5f0;
+        padding: 25px 40px;
+        border-radius: 15px;
     }
 
     .image-box {
@@ -280,20 +278,7 @@
         margin-top: 10px;
     }
 
-    /* =========================
-       LIST
-    ========================== */
-
-    .content-card ul {
-        background: #fff5f0;
-        padding: 25px 40px;
-        border-radius: 15px;
-    }
-
-    /* =========================
-       TOMBOL SELANJUTNYA
-    ========================== */
-
+    /* TOMBOL */
     .next-button {
         text-align: center;
         margin-top: 40px;
@@ -315,31 +300,28 @@
         transform: scale(1.05);
     }
 
-    /* =========================
-       BAB III
-    ========================== */
-
+    /* PENUTUP */
     .closing {
         background: #f7d9cb;
     }
 
-    /* =========================
-       FOOTER
-    ========================== */
+    .paper-box {
+        max-width: 1050px;
+        margin: auto;
+        background: white;
+        padding: 45px;
+        border-radius: 20px;
+        box-shadow: 0 10px 35px rgba(100,60,40,0.1);
+    }
 
     footer {
         background: #6d4639;
         color: #fff4ef;
         text-align: center;
-        padding: 35px;
+        padding: 30px;
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================== */
-
     @media(max-width: 850px) {
-
         .cover-container {
             grid-template-columns: 1fr;
         }
@@ -354,52 +336,32 @@
 
         nav {
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
 
-        nav a {
-            margin: 5px;
-        }
-
-        section {
-            padding: 55px 6%;
-        }
-
-        .paper-box,
-        .content-card {
+        .content-card,
+        .paper-box {
             padding: 25px;
         }
     }
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     NAVIGASI
-========================== -->
-
 <nav>
-
-    <div class="logo">
-        SISTEM OTOT MANUSIA
-    </div>
+    <div class="logo">SISTEM OTOT MANUSIA</div>
 
     <div>
         <a href="#beranda">Beranda</a>
-        <a href="#pendahuluan">BAB I</a>
-        <a href="#materi">Materi</a>
-        <a href="#penutup">BAB III</a>
+        <a href="#materi">Topik</a>
+        <a href="#materi1">Pembahasan</a>
+        <a href="#penutup">Penutup</a>
     </div>
-
 </nav>
 
 
-<!-- =========================
-     COVER
-========================== -->
+<!-- COVER -->
 
 <section class="cover" id="beranda">
 
@@ -408,7 +370,7 @@
         <div class="cover-text">
 
             <div class="small-title">
-                MAKALAH ANATOMI DAN FISIOLOGI MANUSIA
+                MAKALAH SISTEM OTOT MANUSIA
             </div>
 
             <h1>
@@ -418,36 +380,59 @@
 
             <p>
                 Sistem otot merupakan salah satu sistem penting dalam tubuh manusia
-                yang memungkinkan terjadinya gerakan, mempertahankan postur tubuh,
-                menghasilkan panas, serta membantu berbagai proses fisiologis.
-                Kerja sistem otot tidak berdiri sendiri, tetapi berhubungan erat
-                dengan sistem rangka dan sistem saraf.
+                yang berperan dalam menghasilkan gerakan, mempertahankan postur,
+                membantu aktivitas tubuh, serta bekerja sama dengan sistem rangka
+                dan sistem saraf.
             </p>
 
             <div class="cover-info">
 
-                <b>Disusun untuk memenuhi tugas mata kuliah</b>
+                <h3>Disusun Oleh Kelompok 12</h3>
 
-                <br><br>
+                <div class="member">
+                    <b>Muhamad Ridlo Haikal</b><br>
+                    NIM: 222154130<br>
+                    Anggota
+                </div>
 
-                <b>Disusun oleh:</b><br>
-                Kelompok ...............
+                <hr>
 
-                <br><br>
+                <div class="member">
+                    <b>Chika Nurhafidzah Angela</b><br>
+                    NIM: 242154111115<br>
+                    Anggota
+                </div>
+
+                <hr>
+
+                <div class="member">
+                    <b>Syapiq Ilham</b><br>
+                    NIM: 242154111127<br>
+                    Anggota
+                </div>
+
+                <hr>
+
+                <div class="member">
+                    <b>Ghaly Fayi Al Hazmi</b><br>
+                    NIM: 242154111131<br>
+                    Anggota
+                </div>
+
+            </div>
+
+            <div class="lecturer-info">
 
                 <b>Dosen Pengampu:</b><br>
-                ....................................
+
+                Dr. Dani Ramdani, S.Pd., M.Pd.
 
             </div>
 
         </div>
 
-
         <div class="cover-image">
-
-            <img src="images/p1_1.png"
-                 alt="Sistem Otot Manusia">
-
+            <img src="images/p1_1.png" alt="Sistem Otot Manusia">
         </div>
 
     </div>
@@ -455,218 +440,70 @@
 </section>
 
 
-
-<!-- =========================
-     BAB I
-========================== -->
-
-<section id="pendahuluan">
-
-    <div class="section-title">
-
-        <span>BAB I</span>
-
-        <h2>PENDAHULUAN</h2>
-
-    </div>
-
-
-    <div class="paper-box">
-
-        <h3>A. Latar Belakang</h3>
-
-        <p>
-            Tubuh manusia memiliki kemampuan untuk melakukan berbagai macam
-            aktivitas, mulai dari gerakan sederhana hingga gerakan yang
-            membutuhkan koordinasi yang sangat kompleks. Kemampuan tersebut
-            sangat bergantung pada kerja sama antara sistem rangka, sistem saraf,
-            dan sistem otot. Sistem otot menjadi salah satu komponen utama yang
-            memungkinkan tubuh menghasilkan gerakan melalui proses kontraksi
-            dan relaksasi.
-        </p>
-
-        <p>
-            Otot tidak hanya berfungsi untuk menggerakkan tulang. Dalam kehidupan
-            sehari-hari, aktivitas seperti berjalan, berdiri, menulis, berbicara,
-            bernapas, dan menjaga keseimbangan tubuh juga melibatkan kerja otot.
-            Selain itu, kontraksi otot menghasilkan energi panas yang membantu
-            mempertahankan suhu tubuh.
-        </p>
-
-        <p>
-            Pemahaman mengenai sistem otot penting untuk mempelajari bagaimana
-            tubuh menghasilkan gerakan. Pembahasan mengenai sistem otot mencakup
-            struktur makroskopis dan mikroskopis otot, mekanisme kontraksi,
-            sumber energi, pengaturan aktivitas otot, hingga berbagai kelainan
-            yang dapat terjadi pada sistem muskular.
-        </p>
-
-
-        <h3>B. Rumusan Masalah</h3>
-
-        <ul>
-            <li>Bagaimana struktur dan organisasi sistem otot manusia?</li>
-            <li>Bagaimana struktur mikroskopis serat otot?</li>
-            <li>Bagaimana mekanisme terjadinya kontraksi dan relaksasi otot?</li>
-            <li>Dari mana energi untuk aktivitas kontraksi otot diperoleh?</li>
-            <li>Bagaimana karakteristik respons otot terhadap rangsangan?</li>
-            <li>Apa saja contoh kelainan yang dapat terjadi pada sistem otot?</li>
-        </ul>
-
-
-        <h3>C. Tujuan</h3>
-
-        <p>
-            Makalah ini bertujuan untuk memahami sistem otot manusia secara
-            menyeluruh, mulai dari struktur penyusunnya hingga mekanisme kerja
-            yang memungkinkan tubuh menghasilkan gerakan. Selain itu, pembahasan
-            ini juga bertujuan untuk menjelaskan hubungan antara struktur otot,
-            kontraksi, energi, sistem saraf, serta berbagai gangguan yang dapat
-            memengaruhi fungsi otot.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     MENU MATERI
-========================== -->
+<!-- TOPIK PEMBAHASAN -->
 
 <section class="menu-section" id="materi">
 
     <div class="section-title">
-
         <span>TOPIK PEMBAHASAN</span>
-
         <h2>Pilih Materi yang Ingin Dipelajari</h2>
-
-        <p>
-            Klik salah satu materi untuk langsung menuju pembahasan.
-        </p>
-
+        <p>Klik salah satu topik untuk menuju pembahasan.</p>
     </div>
-
 
     <div class="materi-grid">
 
-
         <a href="#materi1" class="materi-card">
-
             <div class="materi-number">1</div>
-
             <h3>Anatomi Makroskopis Otot</h3>
-
-            <p>
-                Struktur dan lapisan jaringan penyusun otot.
-            </p>
-
+            <p>Struktur dan lapisan penyusun otot.</p>
         </a>
-
 
         <a href="#materi2" class="materi-card">
-
             <div class="materi-number">2</div>
-
             <h3>Struktur Mikroskopis Serat Otot</h3>
-
-            <p>
-                Organisasi serat otot dan komponen penyusunnya.
-            </p>
-
+            <p>Organisasi dan komponen serat otot.</p>
         </a>
-
 
         <a href="#materi3" class="materi-card">
-
             <div class="materi-number">3</div>
-
             <h3>Sarkomer</h3>
-
-            <p>
-                Unit kontraktil utama pada otot rangka.
-            </p>
-
+            <p>Unit kontraktil utama pada otot.</p>
         </a>
-
 
         <a href="#materi4" class="materi-card">
-
             <div class="materi-number">4</div>
-
             <h3>Mekanisme Kontraksi Otot</h3>
-
-            <p>
-                Proses pembentukan gaya melalui interaksi protein.
-            </p>
-
+            <p>Proses terjadinya kontraksi otot.</p>
         </a>
-
 
         <a href="#materi5" class="materi-card">
-
             <div class="materi-number">5</div>
-
             <h3>Relaksasi Otot</h3>
-
-            <p>
-                Peran kalsium dan SERCA dalam relaksasi.
-            </p>
-
+            <p>Proses otot kembali ke keadaan relaksasi.</p>
         </a>
-
 
         <a href="#materi6" class="materi-card">
-
             <div class="materi-number">6</div>
-
             <h3>Sumber Energi Otot</h3>
-
-            <p>
-                Sistem energi untuk menghasilkan ATP.
-            </p>
-
+            <p>Sistem energi untuk menghasilkan ATP.</p>
         </a>
-
 
         <a href="#materi7" class="materi-card">
-
             <div class="materi-number">7</div>
-
-            <h3>Unit Motorik dan Respons Otot</h3>
-
-            <p>
-                Hubungan saraf motorik dan aktivitas otot.
-            </p>
-
+            <h3>Unit Motorik</h3>
+            <p>Hubungan saraf motorik dan serat otot.</p>
         </a>
-
 
         <a href="#materi8" class="materi-card">
-
             <div class="materi-number">8</div>
-
-            <h3>Kedutan, Sumasi, dan Tetanus</h3>
-
-            <p>
-                Respons otot terhadap frekuensi rangsangan.
-            </p>
-
+            <h3>Respons Otot</h3>
+            <p>Kedutan, sumasi, dan tetanus.</p>
         </a>
 
-
         <a href="#materi9" class="materi-card">
-
             <div class="materi-number">9</div>
-
             <h3>Kelainan Sistem Otot</h3>
-
-            <p>
-                Contoh gangguan yang memengaruhi fungsi otot.
-            </p>
-
+            <p>Gangguan yang dapat memengaruhi otot.</p>
         </a>
 
     </div>
@@ -674,691 +511,415 @@
 </section>
 
 
-
-<!-- =========================
-     MATERI 1
-========================== -->
+<!-- MATERI 1 -->
 
 <section class="materi-section" id="materi1">
 
     <div class="materi-heading">
-
-        <div class="number">MATERI 1</div>
-
+        <div class="number">1</div>
         <h2>Anatomi Makroskopis Otot</h2>
-
     </div>
-
 
     <div class="content-card">
 
         <p>
             Otot rangka memiliki organisasi struktural yang tersusun secara
-            bertingkat. Sebuah otot tersusun atas sejumlah berkas serat yang
-            bekerja bersama untuk menghasilkan gaya. Organisasi tersebut
-            memungkinkan gaya yang dihasilkan oleh kontraksi sel-sel otot
-            diteruskan menuju tendon dan akhirnya menghasilkan gerakan pada
-            sistem rangka.
+            bertingkat. Sebuah otot terdiri atas berbagai kelompok serat yang
+            bekerja secara bersama-sama untuk menghasilkan gaya dan gerakan.
+            Struktur tersebut memungkinkan tubuh melakukan berbagai aktivitas
+            dengan kekuatan yang sesuai dengan kebutuhan.
         </p>
 
         <p>
-            Jaringan ikat berperan penting dalam menyatukan dan melindungi
-            struktur otot. Lapisan jaringan ikat tidak hanya berfungsi sebagai
-            pembungkus, tetapi juga membantu distribusi gaya yang dihasilkan
-            selama kontraksi.
+            Otot juga dilindungi oleh jaringan ikat yang membantu menyatukan
+            berbagai bagian otot. Jaringan ini berperan dalam mempertahankan
+            struktur serta membantu meneruskan gaya kontraksi menuju tendon.
         </p>
 
-
         <div class="image-box">
-
-            <img src="images/p8_1.png"
-                 alt="Lapisan Jaringan Ikat Otot">
-
-            <div class="caption">
-                Struktur lapisan jaringan ikat pada otot.
-            </div>
-
+            <img src="images/p8_1.png" alt="Struktur Otot">
         </div>
-
 
         <h3>Lapisan Jaringan Ikat</h3>
 
         <ul>
-            <li>
-                <b>Epimisium</b>, yaitu jaringan yang membungkus keseluruhan otot.
-            </li>
-
-            <li>
-                <b>Perimisium</b>, yaitu jaringan yang membungkus kelompok serat
-                otot atau fasikulus.
-            </li>
-
-            <li>
-                <b>Endomisium</b>, yaitu jaringan yang membungkus setiap serat
-                otot secara individual.
-            </li>
+            <li><b>Epimisium</b> membungkus keseluruhan otot.</li>
+            <li><b>Perimisium</b> membungkus kelompok serat atau fasikulus.</li>
+            <li><b>Endomisium</b> membungkus setiap serat otot.</li>
         </ul>
 
     </div>
 
-
     <div class="next-button">
-        <a href="#materi2">Lanjut ke Materi 2 →</a>
+        <a href="#materi2">Lanjut ke Pembahasan 2 →</a>
     </div>
 
 </section>
 
 
-
-<!-- =========================
-     MATERI 2
-========================== -->
+<!-- MATERI 2 -->
 
 <section class="materi-section" id="materi2">
 
     <div class="materi-heading">
-
-        <div class="number">MATERI 2</div>
-
+        <div class="number">2</div>
         <h2>Struktur Mikroskopis Serat Otot</h2>
-
     </div>
-
 
     <div class="content-card">
 
         <p>
             Serat otot merupakan sel khusus yang memiliki kemampuan untuk
-            berkontraksi. Berbeda dengan banyak sel tubuh lainnya, serat otot
-            memiliki bentuk memanjang dan mengandung berbagai struktur internal
-            yang mendukung fungsi kontraksi.
+            berkontraksi. Serat ini memiliki bentuk memanjang dan mengandung
+            berbagai struktur yang mendukung proses kontraksi.
         </p>
 
         <p>
-            Membran sel pada serat otot disebut sarkolema, sedangkan sitoplasma
-            disebut sarkoplasma. Di dalam sarkoplasma terdapat banyak struktur
-            kontraktil yang disebut miofibril. Miofibril tersusun secara berulang
-            dan membentuk unit-unit kontraktil yang disebut sarkomer.
+            Membran sel otot disebut sarkolema, sedangkan sitoplasmanya disebut
+            sarkoplasma. Di dalam serat otot terdapat miofibril yang tersusun
+            secara teratur dan menjadi bagian penting dalam menghasilkan gerakan.
         </p>
-
 
         <div class="image-box">
-
-            <img src="images/p10_1.png"
-                 alt="Struktur Serat Otot">
-
-            <div class="caption">
-                Struktur mikroskopis serat otot.
-            </div>
-
+            <img src="images/p10_1.png" alt="Serat Otot">
         </div>
 
-
         <p>
-            Struktur yang tersusun secara teratur tersebut memungkinkan otot
-            menghasilkan kontraksi secara terkoordinasi. Ketika rangsangan saraf
-            diterima, perubahan kimia dan listrik di dalam sel akan memicu
-            interaksi protein kontraktil sehingga panjang unit kontraktil berubah.
+            Miofibril tersusun atas unit-unit kontraktil yang berulang. Susunan
+            tersebut memungkinkan otot menghasilkan kontraksi secara teratur
+            dan terkoordinasi.
         </p>
 
     </div>
 
-
     <div class="next-button">
-        <a href="#materi3">Lanjut ke Materi 3 →</a>
+        <a href="#materi3">Lanjut ke Pembahasan 3 →</a>
     </div>
 
 </section>
 
 
-
-<!-- =========================
-     MATERI 3
-========================== -->
+<!-- MATERI 3 -->
 
 <section class="materi-section" id="materi3">
 
     <div class="materi-heading">
-
-        <div class="number">MATERI 3</div>
-
+        <div class="number">3</div>
         <h2>Sarkomer sebagai Unit Kontraktil</h2>
-
     </div>
-
 
     <div class="content-card">
 
         <p>
-            Sarkomer merupakan unit fungsional utama yang memungkinkan terjadinya
-            kontraksi pada otot rangka. Sarkomer tersusun secara berulang
-            sepanjang miofibril. Organisasi yang berulang ini memberikan
-            tampilan lurik pada otot rangka ketika diamati secara mikroskopis.
+            Sarkomer merupakan unit fungsional utama yang berperan dalam proses
+            kontraksi otot. Sarkomer tersusun secara berulang sepanjang
+            miofibril dan memiliki organisasi protein yang sangat teratur.
         </p>
 
-
         <div class="image-box">
-
-            <img src="images/p14_1.png"
-                 alt="Struktur Sarkomer">
-
+            <img src="images/p14_1.png" alt="Sarkomer">
         </div>
-
 
         <p>
-            Komponen utama dalam sarkomer adalah filamen tipis dan filamen tebal.
-            Filamen tipis terutama berkaitan dengan protein aktin, sedangkan
-            filamen tebal terutama berkaitan dengan protein miosin. Interaksi
-            antara kedua filamen tersebut menghasilkan perubahan panjang
-            sarkomer tanpa harus memendekkan filamen secara langsung.
+            Sarkomer terdiri atas filamen tipis dan filamen tebal. Filamen
+            tersebut berinteraksi selama proses kontraksi sehingga menghasilkan
+            perubahan panjang pada sarkomer.
         </p>
 
-
         <div class="image-box">
-
-            <img src="images/p15_1.png"
-                 alt="Komponen Sarkomer">
-
+            <img src="images/p15_1.png" alt="Komponen Sarkomer">
         </div>
 
-
         <div class="image-box">
-
-            <img src="images/p15_2.png"
-                 alt="Struktur Molekul Miosin">
-
+            <img src="images/p15_2.png" alt="Struktur Miosin">
         </div>
-
-
-        <p>
-            Organisasi protein di dalam sarkomer sangat penting karena setiap
-            bagian memiliki fungsi tertentu dalam proses kontraksi. Perubahan
-            posisi filamen menghasilkan perubahan panjang keseluruhan serat otot.
-        </p>
 
     </div>
 
-
     <div class="next-button">
-        <a href="#materi4">Lanjut ke Materi 4 →</a>
+        <a href="#materi4">Lanjut ke Pembahasan 4 →</a>
     </div>
 
 </section>
 
 
-
-<!-- =========================
-     MATERI 4
-========================== -->
+<!-- MATERI 4 -->
 
 <section class="materi-section" id="materi4">
 
     <div class="materi-heading">
-
-        <div class="number">MATERI 4</div>
-
+        <div class="number">4</div>
         <h2>Mekanisme Kontraksi Otot</h2>
-
     </div>
-
 
     <div class="content-card">
 
         <p>
-            Kontraksi otot terjadi melalui proses yang melibatkan interaksi
-            antara protein aktin dan miosin. Mekanisme tersebut dikenal sebagai
-            teori filamen geser atau <i>sliding filament mechanism</i>.
+            Kontraksi otot terjadi melalui interaksi antara protein aktin dan
+            miosin. Mekanisme tersebut dikenal sebagai teori filamen geser,
+            yaitu proses ketika filamen bergeser satu sama lain sehingga
+            menyebabkan perubahan panjang sarkomer.
         </p>
-
-        <p>
-            Ketika otot menerima rangsangan yang sesuai, terjadi perubahan
-            konsentrasi ion kalsium di dalam sel. Kalsium berperan dalam membuka
-            kemungkinan terjadinya interaksi antara aktin dan kepala miosin.
-            Setelah itu, kepala miosin melakukan siklus pengikatan dan pergerakan
-            yang menyebabkan filamen bergeser.
-        </p>
-
 
         <div class="image-box">
-
-            <img src="images/p17_1.png"
-                 alt="Mekanisme Kontraksi Otot">
-
+            <img src="images/p17_1.png" alt="Kontraksi Otot">
         </div>
 
-
         <p>
-            ATP memiliki peranan yang sangat penting dalam proses ini. Energi
-            dari ATP digunakan dalam siklus aktivitas kepala miosin. Oleh karena
-            itu, kontraksi otot sangat bergantung pada ketersediaan energi.
+            Proses kontraksi melibatkan rangsangan saraf, ion kalsium, protein
+            kontraktil, serta ATP sebagai sumber energi. Semua komponen tersebut
+            bekerja secara terkoordinasi untuk menghasilkan gerakan.
         </p>
 
     </div>
 
-
     <div class="next-button">
-        <a href="#materi5">Lanjut ke Materi 5 →</a>
+        <a href="#materi5">Lanjut ke Pembahasan 5 →</a>
     </div>
 
 </section>
 
 
-
-<!-- =========================
-     MATERI 5
-========================== -->
+<!-- MATERI 5 -->
 
 <section class="materi-section" id="materi5">
 
     <div class="materi-heading">
-
-        <div class="number">MATERI 5</div>
-
-        <h2>Relaksasi Otot dan Peran SERCA</h2>
-
+        <div class="number">5</div>
+        <h2>Relaksasi Otot</h2>
     </div>
-
 
     <div class="content-card">
 
         <p>
-            Setelah kontraksi terjadi, otot perlu kembali menuju keadaan relaksasi.
-            Relaksasi bukan hanya berarti berhentinya kontraksi, tetapi merupakan
-            proses fisiologis yang membutuhkan pengaturan konsentrasi kalsium
-            secara tepat.
+            Setelah mengalami kontraksi, otot perlu kembali menuju keadaan
+            relaksasi. Proses ini terjadi melalui pengaturan konsentrasi ion
+            kalsium di dalam sel otot.
         </p>
+
+        <div class="image-box">
+            <img src="images/p19_1.png" alt="Relaksasi Otot">
+        </div>
 
         <p>
-            Salah satu protein penting dalam proses ini adalah SERCA
-            (<i>Sarcoplasmic Endoplasmic Reticulum Calcium ATPase</i>).
-            Protein ini membantu memindahkan ion kalsium kembali ke dalam
-            retikulum sarkoplasma sehingga konsentrasi kalsium di sitoplasma
-            menurun.
+            SERCA berperan dalam membantu memindahkan ion kalsium kembali ke
+            dalam retikulum sarkoplasma. Penurunan konsentrasi kalsium membantu
+            menghentikan proses interaksi kontraktil.
         </p>
 
-
         <div class="image-box">
-
-            <img src="images/p19_1.png"
-                 alt="Relaksasi Otot">
-
+            <img src="images/p20_1.png" alt="SERCA">
         </div>
 
-
         <div class="image-box">
-
-            <img src="images/p20_1.png"
-                 alt="Struktur SERCA">
-
+            <img src="images/p21_1.png" alt="Regulasi Kalsium">
         </div>
 
-
         <div class="image-box">
-
-            <img src="images/p21_1.png"
-                 alt="Regulasi SERCA">
-
+            <img src="images/p22_1.png" alt="Gangguan Kalsium">
         </div>
-
-
-        <div class="image-box">
-
-            <img src="images/p22_1.png"
-                 alt="Gangguan Regulasi Kalsium">
-
-        </div>
-
-
-        <p>
-            Pengaturan kalsium yang baik sangat penting bagi fungsi otot.
-            Gangguan dalam pengaturan ion kalsium dapat memengaruhi kemampuan
-            otot untuk berkontraksi maupun relaksasi secara normal.
-        </p>
 
     </div>
 
-
     <div class="next-button">
-        <a href="#materi6">Lanjut ke Materi 6 →</a>
+        <a href="#materi6">Lanjut ke Pembahasan 6 →</a>
     </div>
 
 </section>
 
 
-
-<!-- =========================
-     MATERI 6
-========================== -->
+<!-- MATERI 6 -->
 
 <section class="materi-section" id="materi6">
 
     <div class="materi-heading">
-
-        <div class="number">MATERI 6</div>
-
-        <h2>Sumber Energi untuk Kontraksi Otot</h2>
-
+        <div class="number">6</div>
+        <h2>Sumber Energi untuk Otot</h2>
     </div>
-
 
     <div class="content-card">
 
         <p>
-            Setiap aktivitas kontraksi otot membutuhkan energi. Sumber energi
-            langsung yang digunakan dalam aktivitas sel adalah ATP
-            (<i>Adenosine Triphosphate</i>). Namun, jumlah ATP yang tersimpan
-            di dalam sel otot relatif terbatas sehingga tubuh harus terus
-            menghasilkan ATP melalui berbagai sistem metabolisme.
+            Aktivitas kontraksi membutuhkan energi dalam bentuk ATP. Karena
+            persediaan ATP di dalam sel terbatas, tubuh menggunakan beberapa
+            sistem untuk menghasilkan energi sesuai kebutuhan aktivitas.
         </p>
 
-
         <div class="image-box">
-
-            <img src="images/p25_1.png"
-                 alt="Tiga Sistem Energi">
-
+            <img src="images/p25_1.png" alt="Sistem Energi">
         </div>
-
-
-        <h3>Tiga Sistem Energi</h3>
 
         <ul>
-
-            <li>
-                <b>Sistem Fosfagen</b>, menyediakan energi dengan sangat cepat
-                untuk aktivitas yang membutuhkan tenaga tinggi dalam waktu singkat.
-            </li>
-
-            <li>
-                <b>Glikolisis Anaerobik</b>, menghasilkan energi melalui
-                pemecahan glukosa tanpa ketergantungan utama pada oksigen.
-            </li>
-
-            <li>
-                <b>Sistem Aerobik</b>, menghasilkan energi melalui proses
-                metabolisme yang melibatkan oksigen.
-            </li>
-
+            <li><b>Sistem fosfagen</b> menghasilkan energi dengan sangat cepat.</li>
+            <li><b>Glikolisis anaerobik</b> menghasilkan energi dari pemecahan glukosa.</li>
+            <li><b>Sistem aerobik</b> menghasilkan energi dengan melibatkan oksigen.</li>
         </ul>
 
-
         <div class="image-box">
-
-            <img src="images/p26_1.png"
-                 alt="Metabolisme Pembentukan ATP">
-
+            <img src="images/p26_1.png" alt="Metabolisme ATP">
         </div>
-
-
-        <p>
-            Ketiga sistem tersebut tidak bekerja secara terpisah sepenuhnya.
-            Kontribusi masing-masing sistem dapat berubah sesuai intensitas dan
-            durasi aktivitas yang dilakukan.
-        </p>
 
     </div>
 
-
     <div class="next-button">
-        <a href="#materi7">Lanjut ke Materi 7 →</a>
+        <a href="#materi7">Lanjut ke Pembahasan 7 →</a>
     </div>
 
 </section>
 
 
-
-<!-- =========================
-     MATERI 7
-========================== -->
+<!-- MATERI 7 -->
 
 <section class="materi-section" id="materi7">
 
     <div class="materi-heading">
-
-        <div class="number">MATERI 7</div>
-
-        <h2>Unit Motorik dan Respons Otot</h2>
-
+        <div class="number">7</div>
+        <h2>Unit Motorik dan Aktivitas Otot</h2>
     </div>
-
 
     <div class="content-card">
 
         <p>
-            Aktivitas otot rangka berhubungan erat dengan sistem saraf.
-            Satu neuron motorik bersama seluruh serat otot yang dipersarafinya
-            disebut sebagai unit motorik.
+            Aktivitas otot rangka berhubungan erat dengan sistem saraf. Unit
+            motorik terdiri atas neuron motorik dan serat-serat otot yang
+            dipersarafinya.
         </p>
-
 
         <div class="image-box">
-
-            <img src="images/p27_1.png"
-                 alt="Unit Motorik">
-
+            <img src="images/p27_1.png" alt="Unit Motorik">
         </div>
 
-
         <p>
-            Unit motorik memungkinkan sistem saraf mengatur kekuatan kontraksi
-            sesuai kebutuhan. Aktivitas yang membutuhkan gerakan halus dan
-            presisi dapat melibatkan pengaturan unit motorik yang berbeda
-            dibandingkan aktivitas yang membutuhkan kekuatan besar.
-        </p>
-
-        <p>
-            Pengaturan jumlah unit motorik yang aktif merupakan salah satu
-            mekanisme penting dalam pengendalian kekuatan kontraksi otot.
+            Sistem saraf dapat mengatur kekuatan kontraksi melalui pengaktifan
+            unit motorik sesuai kebutuhan tubuh.
         </p>
 
     </div>
 
-
     <div class="next-button">
-        <a href="#materi8">Lanjut ke Materi 8 →</a>
+        <a href="#materi8">Lanjut ke Pembahasan 8 →</a>
     </div>
 
 </section>
 
 
-
-<!-- =========================
-     MATERI 8
-========================== -->
+<!-- MATERI 8 -->
 
 <section class="materi-section" id="materi8">
 
     <div class="materi-heading">
-
-        <div class="number">MATERI 8</div>
-
+        <div class="number">8</div>
         <h2>Kedutan, Sumasi, dan Tetanus</h2>
-
     </div>
-
 
     <div class="content-card">
 
         <p>
-            Respons otot terhadap rangsangan dapat berbeda-beda tergantung pada
-            frekuensi dan pola rangsangan yang diterima. Satu rangsangan dapat
-            menghasilkan respons kontraksi yang disebut kedutan otot.
+            Respons otot dapat berubah berdasarkan frekuensi rangsangan yang
+            diterima. Satu rangsangan dapat menghasilkan kedutan, sedangkan
+            rangsangan yang berulang dapat menghasilkan kontraksi yang lebih kuat.
         </p>
 
-
         <div class="image-box">
-
-            <img src="images/p28_1.png"
-                 alt="Kedutan Sumasi dan Tetanus">
-
+            <img src="images/p28_1.png" alt="Respons Otot">
         </div>
 
-
-        <h3>Bentuk Respons Otot</h3>
-
         <ul>
-
-            <li>
-                <b>Kedutan tunggal</b>, yaitu respons terhadap satu rangsangan.
-            </li>
-
-            <li>
-                <b>Sumasi</b>, yaitu peningkatan kekuatan kontraksi akibat
-                rangsangan berikutnya diberikan sebelum otot sepenuhnya relaksasi.
-            </li>
-
-            <li>
-                <b>Tetanus tidak sempurna</b>, yaitu kontraksi berulang dengan
-                periode relaksasi yang masih terjadi sebagian.
-            </li>
-
-            <li>
-                <b>Tetanus sempurna</b>, yaitu kontraksi yang berlangsung terus
-                akibat rangsangan berfrekuensi tinggi.
-            </li>
-
+            <li><b>Kedutan tunggal</b> terjadi akibat satu rangsangan.</li>
+            <li><b>Sumasi</b> meningkatkan kekuatan kontraksi.</li>
+            <li><b>Tetanus tidak sempurna</b> masih memiliki sedikit relaksasi.</li>
+            <li><b>Tetanus sempurna</b> merupakan kontraksi berkelanjutan.</li>
         </ul>
 
     </div>
 
-
     <div class="next-button">
-        <a href="#materi9">Lanjut ke Materi 9 →</a>
+        <a href="#materi9">Lanjut ke Pembahasan 9 →</a>
     </div>
 
 </section>
 
 
-
-<!-- =========================
-     MATERI 9
-========================== -->
+<!-- MATERI 9 -->
 
 <section class="materi-section" id="materi9">
 
     <div class="materi-heading">
-
-        <div class="number">MATERI 9</div>
-
+        <div class="number">9</div>
         <h2>Kelainan pada Sistem Otot</h2>
-
     </div>
-
 
     <div class="content-card">
 
         <p>
             Sistem otot dapat mengalami berbagai gangguan yang memengaruhi
-            kekuatan, kemampuan bergerak, serta fungsi normal tubuh. Kelainan
-            tersebut dapat berkaitan dengan struktur protein otot maupun
-            gangguan dalam proses komunikasi antara saraf dan otot.
+            kekuatan dan kemampuan tubuh untuk bergerak secara normal.
         </p>
-
 
         <h3>Distrofi Muskular Duchenne</h3>
 
         <p>
-            Distrofi Muskular Duchenne merupakan salah satu gangguan yang
-            berkaitan dengan kerusakan progresif pada serat otot. Gangguan
-            terhadap protein tertentu menyebabkan struktur sel otot menjadi
-            lebih rentan mengalami kerusakan.
+            Distrofi muskular merupakan gangguan yang dapat menyebabkan
+            kerusakan progresif pada jaringan otot dan memengaruhi fungsi
+            normal sistem muskular.
         </p>
 
-
         <div class="image-box">
-
-            <img src="images/p30_1.png"
-                 alt="Distrofi Muskular Duchenne">
-
+            <img src="images/p30_1.png" alt="Distrofi Muskular">
         </div>
-
 
         <h3>Myasthenia Gravis</h3>
 
         <p>
-            Myasthenia Gravis merupakan gangguan yang berhubungan dengan
-            penghantaran sinyal antara sistem saraf dan otot. Gangguan pada
-            proses komunikasi tersebut dapat menyebabkan kemampuan kontraksi
-            otot mengalami penurunan.
+            Myasthenia Gravis berkaitan dengan gangguan komunikasi antara saraf
+            dan otot sehingga kemampuan otot untuk berkontraksi dapat terganggu.
         </p>
-
 
         <div class="image-box">
-
-            <img src="images/p31_1.png"
-                 alt="Myasthenia Gravis">
-
+            <img src="images/p31_1.png" alt="Myasthenia Gravis">
         </div>
-
-
-        <p>
-            Pemahaman mengenai berbagai kelainan sistem otot penting karena
-            menunjukkan bahwa fungsi normal otot bergantung pada kerja sama
-            berbagai struktur, protein, sistem saraf, dan mekanisme metabolisme.
-        </p>
 
     </div>
 
-
     <div class="next-button">
-        <a href="#penutup">Lanjut ke BAB III →</a>
+        <a href="#penutup">Lanjut ke Penutup →</a>
     </div>
 
 </section>
 
 
-
-<!-- =========================
-     BAB III
-========================== -->
+<!-- PENUTUP -->
 
 <section class="closing" id="penutup">
 
     <div class="section-title">
-
-        <span>BAB III</span>
-
-        <h2>PENUTUP</h2>
-
+        <span>PENUTUP</span>
+        <h2>Kesimpulan dan Saran</h2>
     </div>
-
 
     <div class="paper-box">
 
-        <h3>A. Kesimpulan</h3>
+        <h3>Kesimpulan</h3>
 
         <p>
-            Sistem otot merupakan salah satu sistem penting dalam tubuh manusia
-            yang memungkinkan terjadinya gerakan dan mendukung berbagai fungsi
-            fisiologis. Struktur otot tersusun secara terorganisasi mulai dari
-            keseluruhan otot hingga unit-unit mikroskopis yang berperan langsung
-            dalam kontraksi.
+            Sistem otot merupakan bagian penting dalam tubuh manusia yang
+            memungkinkan terjadinya gerakan dan berbagai aktivitas fisiologis.
+            Struktur otot tersusun secara terorganisasi mulai dari tingkat
+            makroskopis hingga mikroskopis.
         </p>
 
         <p>
-            Kontraksi otot terjadi melalui interaksi antara protein kontraktil
-            yang diatur oleh rangsangan saraf dan perubahan konsentrasi ion
-            kalsium. Proses tersebut membutuhkan energi dalam bentuk ATP.
-            Setelah kontraksi, mekanisme relaksasi membantu mengembalikan kondisi
-            sel otot agar dapat kembali berfungsi secara normal.
+            Kontraksi otot melibatkan kerja sama antara sistem saraf, ion
+            kalsium, protein kontraktil, dan energi ATP. Berbagai sistem energi
+            membantu menyediakan energi sesuai kebutuhan aktivitas tubuh.
         </p>
 
-        <p>
-            Sistem energi, unit motorik, dan respons terhadap rangsangan juga
-            memiliki peranan penting dalam menentukan aktivitas otot. Selain itu,
-            berbagai kelainan dapat mengganggu struktur maupun fungsi sistem
-            muskular sehingga memengaruhi kemampuan tubuh untuk melakukan
-            aktivitas secara optimal.
-        </p>
-
-
-        <h3>B. Saran</h3>
+        <h3>Saran</h3>
 
         <p>
-            Pemahaman mengenai sistem otot perlu dikembangkan melalui pembelajaran
-            yang menghubungkan struktur anatomi dengan mekanisme fisiologis.
-            Dengan memahami bagaimana otot bekerja, pembelajaran mengenai gerakan
-            manusia dan berbagai gangguan sistem muskular dapat dilakukan secara
+            Pemahaman mengenai sistem otot perlu dikembangkan dengan mempelajari
+            hubungan antara struktur dan fungsi. Dengan demikian, proses gerakan
+            dan berbagai gangguan pada sistem muskular dapat dipahami secara
             lebih menyeluruh.
         </p>
 
@@ -1367,19 +928,9 @@
 </section>
 
 
-
-<!-- =========================
-     FOOTER
-========================== -->
-
 <footer>
-
-    <p>
-        © 2026 | Makalah Sistem Otot Manusia
-    </p>
-
+    © 2026 | Makalah Sistem Otot Manusia | Kelompok 12
 </footer>
-
 
 </body>
 </html>
